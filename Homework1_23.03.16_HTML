@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+    <head>
+        <title>My App</title>
+        <meta charset="utf-8">  
+        <link href="img/favicon/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    </head>
+    <body>
+    <h2>My app</h2>
+    <img src="http://vignette2.wikia.nocookie.net/nonsensopedia/images/2/28/Leniwy_kot.jpg/revision/latest?cb=20060129174436" width="100" alt="Zdjecie fantastycznego królika">
+    <h3>Dashboard </h3>
+    
+    <small><a href="https://duckduckgo.com"> DuckDuckGo </a> </small>  &#31;
+    <small><a href="http://sealcode.org"> Sealcode </a></small>  &#31;
+    
+    <small><a href="http://gmail.com"> Go to Login </a></small>  &#31;
+     
+    <p>
+    <small><strong>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </strong> It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. </small>
+    </p>
+    <table border="1" width="19%" >
+    <tr>
+    	<td> <small> Number </small> </td>
+    	<td> <small>First name </small></td>
+    	<td> <small>Last name </small></td>
+    </tr>	
+    <tr>
+    	<td><small>1</small></td>
+    	<td><small>Kuba</small></td>
+    	<td><small>Orlik</small></td>
+    </tr>
+    <tr>
+    	<td><small>2</small> </td>
+    	<td> <small>Adrian </small></td>
+    	<td> <small>Wydamński </small></td>
+    	
+    </tr>
+    <tr>
+      <td><small>3 </small></td>
+      <td> <small> Arkadiusz </small></td>
+      <td> <small> Wieczorek </small></td>
+    </tr>
+    </table>
+
+  <h5> List 1</h5>
+   <ol>
+   <li> <small>ThinkPad</small> </li>
+   <li> <small>MackBook</small></li>
+   <li> <small>Samsung</small></li>  
+    </ol>
+  
+  <h5 > List 2</h5>
+  <ul>
+  <li> <small> Keyboard </small></li>
+  <li> <small>Mouse </small> </li>
+  <li> <small>Trackpoint </small></li> 	
+  </ul>
+
+
+  <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTYh1R8qA-akJf2XqmdUOgSblc1yzR91M5D4DVu3412a-DvekYyqg" width="200" alt="Zdjecie fantastycznego królika">
+
+
+
+
+   </body>
+</html>
