@@ -13,5 +13,3 @@ git checkout -b imie-nazwisko
 The deadline for homework assignments will generally be Saturday after workshops, 23:59
 
 Please ask any questions regarding homework in this very topic :)
-
-test janusza
