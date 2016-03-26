@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html lang="pl">
+<head>
+
+	<meta charset="utf-8"/>
+	<title>Lista zadań</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+<style>
+	body
+  {
+      background-color:#303030;
+      color: white;
+
+
+  }
+  #pojemnik
+  {
+      width:500px;
+      background: #424242;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 5px;
+  }
+  h1
+  {
+    text-align: center;
+  }
+  ol>li:hover
+  {
+    background: #535353;
+  }
+
+
+</style>
+</head>
+<body>
+<div id="pojemnik"><h1> Lista zadań</h1>
+			<ol>
+				<li>Zrobić zakupy
+          <ul>
+            <li>Mleko</li>
+            <li>Płatki owsiane</li>
+            <li>Banan</li>
+            <li>Jogurt naturalny</li>
+          </ul>
+        </li>
+				<li>Posprzątać mieszkanie</li>
+				<li>Zrobić zaproszenia</li>
+        <li>Zadzownić do mamy</li>
+      </ol>
+
+</div>
+
+
+</body>
+</html>
