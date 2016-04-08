@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pl_PL">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Todo app</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style type="text/css">
+        html {
+            box-sizing: border-box;
+            font-size: 1em;
+        }
+
+        .container {
+            border-width: thin;
+            border-style: solid;
+        }
+
+        .img-circle {
+            width: 10rem;
+            height: 10rem;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Hello, world!</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 col-sm-6 col-xs-12">
+                <img src="images/cat1.jpg" class="img-thumbnail">
+            </div>
+            <div class="col-md-3 col-sm-6 col-xs-12">
+                <img src="images/cat2.jpg" class="img-thumbnail">
+            </div>
+            <div class="col-md-3 col-sm-6 col-xs-12">
+                <img src="images/cat3.jpg" class="img-thumbnail">
+            </div>
+            <div class="col-md-3 col-sm-6 col-xs-12">
+                <img src="images/cat4.jpg" class="img-thumbnail">
+            </div>
+        </div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Imię</th>
+                    <th>Nazwisko</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Jan</td>
+                    <td>Kowalski</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Jakub</td>
+                    <td>Nowak</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-envelope-o fa-fw"></i></span>
+            <input class="form-control" type="text" placeholder="Adres Email">
+        </div>
+        <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-key fa-fw"></i></span>
+            <input class="form-control" type="password" placeholder="Hasło">
+        </div>
+    </div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+</body>
