@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Aplikacja ToDo</title>
+        <meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="style.css"/>
+		<link href='https://fonts.googleapis.com/css?family=Lato:400,900|Josefin+Sans:400,700&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    </head>
+    <body>
+		<div class="container">
+			<div class="header">
+				<h1>Do zrobienia</h1>
+
+  					<p> Dzisiaj jest : 7.04.16 (piątek) </p>
+
+			</div>
+
+
+
+			<div class="content">
+				<div class="tasks">
+					<h4>Dzisiaj masz do zrobienia:<h4>
+        <h3> Praca </h3>
+          <ol>
+						<li>Fix do Bit-commitment</li>
+            <li>Spotkanie z klientem 13:00</li>
+					</ol>
+
+        <h3>Dom</h3>
+          <ol title="Dom">
+            <li>Zrobić zakupy</li>
+            <li>Zapłacić za siłownię</li>
+          </ol>
+
+				</div>
+
+			</div>
+      <div class="new-task">
+    <p>		Dodawanie nowych zadań </p>
+     <input type="text" name="task" placeholder="Wpisz nowe zadanie" id="input-text" />
+                <input type="submit" value="Dodaj" id="add-task-button" />
+      </div>
+
+
+
+      <div class="next-day">
+        <p>Aby zobaczyć zadania na kolejny dzień, kliknij przycisk:</p>
+        <p> <input class="button" type="submit" value="Zadania na kolejny dzień" id="nextday-button" /> </p>
+      </div>
+
+		</div>
+	</body>
+</html>
