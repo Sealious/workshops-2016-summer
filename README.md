@@ -1,6 +1,6 @@
 We've set up a simple repository where we encaurage you to push your homework :)
 
-Here's the link to the repository: https://github.com/Sealious/workshops-2016-summer1
+Here's the link to the repository: https://github.com/Sealious/workshops-2016-summer
 
 Please clone it:
 
