@@ -1,0 +1,55 @@
+html{
+  font-size: 1rem;
+}
+body {
+  font-family: sans-serif;
+}
+.content{
+  max-width: 35rem;
+  font-size: 1rem;
+  margin: 0 auto;
+  padding: 0 0.75rem; 
+}
+.app-header {
+  font-size: 4.5em;
+  line-height: 1.333333em;
+  margin-bottom: 0.75rem;
+  margin-top: 1.5rem;
+}
+.app-header-subtitle {
+  font-size: 1.2em;
+  line-height: 1.5rem;
+  margin-top: 0.75rem;
+  margin-bottom: 4.5rem;
+}
+.app-header, .app-header-subtitle {
+  color: #333;
+}
+.todo-field {
+  height: 1.5rem;
+  margin: 1.5rem 0;
+  font-size: 1em;
+}
+.todo-button {
+  font-size: 1em;
+  padding: 0.1875em;
+}
+.todo-field, .todo-button {
+  color: #333;
+}
+article{
+  max-width: 30rem;
+  background: rgb(235, 235, 235);
+  padding: 0.75em;
+  margin: 1.5em 0;
+  color: #333;
+}
+article > h3 {
+  line-height: 1.5rem;
+  margin: 1.5rem 0;
+  font-weight: normal;
+}
+article > p {
+  line-height: 1.5rem;
+  margin: 1.5rem 0;
+}
