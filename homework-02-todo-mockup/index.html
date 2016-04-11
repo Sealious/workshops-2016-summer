@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<title>TO DO app</title>
+</head>
+<body>
+	<header>
+		<h1>Get your sh*t together...</h1>
+	</header>
+	<section class="nav">
+		<h2 class="nav-element nav-element-active">Today</h2>
+		<h3 class="nav-element">Tommorow</h3>
+		<h3 class="nav-element">This week</h3>
+		<h3 class="nav-element">Later</h3>
+		<h3 class="nav-element nav-element-archive">Never again</h3>
+	</section>
+	<section class="list">
+		<ul>
+			<li class="list-task list-task-important">Eat breakfast</li>
+			<li class="list-task list-task-important">Get some sleep</li>
+			<li class="list-task">Kill my boyfriend</li>
+			<li class="list-task">Bathroom cleaning</li>
+			<li class="list-task">Take blue pill (NOT RED!!1)</li>
+			<li class="list-task">Call to mom</li>
+		</ul>
+	</section>
+	<section class="new-task">
+		<h2>Let's add new stuff</h2>
+		<select>
+			<option value="Today">Today</option>
+			<option value="Tommorow">Tommorow</option>
+			<option value="This week">This week</option>
+			<option value="Later">Later</option>
+		</select>
+		<form>
+			<textarea class="textbox" placeholder="I want this sh*t to be done..." class="form-new-task"></textarea>
+			
+			<div class="checkbox">
+				<input type="checkbox" id="c" name="important" value="1">
+				<label for"c"><span></span>Important</label>
+			</div>
+			<input class="submit" type="submit" value="Add"></input>
+
+		</form>
+			
+	</section>
+	<footer>
+		<p>Made without <img src="heart.png" class="love-icon"></p>
+	</footer>
+</body>
+</html>

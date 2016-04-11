@@ -1,0 +1,161 @@
+* {
+	margin: 0;
+	box-sizing: border-box;
+}
+*::selection {
+	background: #ffac7c;
+	color: white;
+}
+html {
+	font-size: 1.5em;
+	color: #5A5A52;
+}
+
+
+body {
+	max-width: 40rem;
+	margin: 1rem auto;
+	padding: 0 1rem;
+	font-family: sans-serif;
+
+}
+
+header {
+	font-size: 1.5rem;
+	line-height: 3rem;
+	margin: 1.5rem auto;
+
+}
+section {
+	height: 16rem;
+}
+
+.nav {
+	font-size: 0.5rem;
+	float: left;
+	min-width: 25%;
+	max-width: 30%
+	padding: 0 0.5rem;
+}
+
+.nav-element {
+	margin: 1rem 0;
+}
+.nav-element-active {
+	font-size: 2rem;
+}
+.nav-element-archive {
+	color: #aaaaaa;
+}
+.nav-element:hover {
+	/*color: #ffac7c;*/
+	cursor: pointer;
+}
+
+.list {
+	float: left;
+	width: 50%;
+	line-height: 1.75rem;
+	font-size: 1rem;
+	padding: 1rem;
+	list-style: none;
+}
+.list-task {
+	font-weight: normal;
+	padding-left: 0.5rem;
+	list-style-image: url(poo-black.ico);
+
+}
+.list-task:hover {
+	/*list-style-image: url(poo.ico);*/
+	color: #353535;
+	cursor: pointer;
+}
+
+.list-task-important {
+	color: #2b2b2b;
+	font-weight: bold;
+
+}
+
+.new-task {
+	float: right;
+	width: 25%;
+}
+
+.new-task h2 {
+	font-size: 0.75rem;
+	color: #d8d8d8;
+}
+
+
+select {
+   height: 1rem;
+   overflow: hidden;
+   width: 5rem;
+   background: transparent;
+   border: none;
+   font-size: 0.5rem;
+   height: 1rem;
+   width: 7rem;
+   background-color: #ededed;
+   margin: 0.5rem 0 0 0;
+}
+select::selection {
+	background-color: #ffac7c;
+}
+
+.checkbox {
+	font-size: 0.60rem;
+}
+
+
+.textbox { 
+	background: white; 
+	padding: 0.1rem;
+	margin: 1rem 0;
+	border: 1px solid #DDD; 
+	border-radius: 5px; 
+	box-shadow: 0 0 5px #DDD inset; 
+	color: #666; 
+	outline: none; 
+	height: 5rem; 
+	width: 7rem; 
+	font-size: 1rem;
+} 
+
+.submit {
+	margin: 1rem 1rem;
+	background-color: #DDD;
+	color: #5A5A52;
+	font-size: 0.75rem;
+	line-height: 1rem;
+	border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border: 0;
+	width:120px;
+	height:32px;
+	cursor: pointer;
+}
+.submit:hover {
+	/*background-color: #ffac7c;*/
+	color: white;
+}
+
+footer {
+	clear: both;
+	line-height: 2rem;
+}
+footer p {
+	font-size: 0.8rem;
+	text-align: center;
+}
+
+.love-icon {
+	width: 0.8rem;
+	height: 0.8rem;
+	margin: 0 0.75rem 0 0;
+	opacity: 0.5;
+	display: inline;
+}
