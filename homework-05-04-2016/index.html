@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+<head>
+      <title>Lista zadań</title>
+      <meta charset="utf-8">
+      <style type="text/css">
+
+      html
+      {
+        font-size: 1.5em;
+        color: #ffffff;
+      }
+      body
+      {
+        font-family: Arial;
+      }
+
+      h1,h2,h3
+      {
+            line-height:4rem;
+            font-weight: normal;
+            margin: 0 auto;
+            text-align: center;
+            background-color: #a0a0a0;
+      }
+
+      article
+      {
+        max-width: 32rem;
+        margin: 0 auto;
+        background-color: #656565;
+      }
+      ol
+      {
+        text-align:left;
+        list-style-type:none;
+        margin:0;
+        line-height:2rem;
+      }
+      div{
+        text-align:center;
+      }
+
+      p
+      {
+        text-align: center;
+      }
+
+
+      </style>
+</head>
+<body>
+    <article>
+      <center><img src="todo.png" alt="ToDo" width="200"/></center>
+      <p>Dodaj nowe zadanie:
+        <input type="text" placeholder="zadanie"></input>
+        <input type="time"></input>
+        <input type="date"></input>
+        <button>Dodaj!</button>
+      </p>
+ 		  <h2>Moja lista zadań</h2>
+      <p>Wyświetl dzień:
+        <input type="date"></input>
+        <button>Pokaż!</button>
+      </p>
+      <ol>
+   			<li><input type="checkbox" name="usuwanie" value="1" />07:00 - Obudź się! </li>
+   			<li><input type="checkbox" name="usuwanie" value="1" />07:15 - Śniadanko.</li>
+        <li><input type="checkbox" name="usuwanie" value="1" />08:00 - Umyj się i ząbki.</li>
+        <li><input type="checkbox" name="usuwanie" value="1" />08:15 - Zajęcia.</li>
+        <li><input type="checkbox" name="usuwanie" value="1" />13:00 - Powrót do domu.</li>
+        <li><input type="checkbox" name="usuwanie" value="1" />14:00 - Obiadek.</li>
+        <li><input type="checkbox" name="usuwanie" value="1" />15:00 - Do końca dnia rób co chcesz.</li>
+   		</ol>
+      <p>
+        <button>Usuń zaznaczone!</button>
+        <button>Przenieś zaznaczone!</button>
+      </p>
+      <h2>Ruszaj zrobić kolejne zadanie!!!</h2>
+    </article>
+</body>
+</html>
