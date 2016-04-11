@@ -13,7 +13,11 @@ h1, h2, ul, form, footer, li {
     padding-bottom: 0;
 }
 
-h1{
+section {
+    color: #333;
+}
+
+h1 {
     font-size: 2.25rem;
     line-height: 2.5rem;
     font-weight: normal;
@@ -25,9 +29,16 @@ h2 {
     font-weight: normal;
 }
 
+ul {
+    padding-left: 0;
+}
+
 li {
     font-size: 1.25rem;
     line-height: 2.5rem;
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
 }
 
 form {
@@ -39,4 +50,10 @@ footer {
     font-size: 0.625rem;
     color: #AAA;
     text-align: right;
+}
+
+li>input{
+    transform: scale(1.5);
+    -webkit-transform: scale(1.5);
+    margin-right: 0.5em;
 }
