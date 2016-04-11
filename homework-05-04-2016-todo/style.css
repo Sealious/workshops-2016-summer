@@ -1,26 +1,20 @@
-*{
-    font-size: 100%;
-    line-height: 1.25rem;
-    box-sizing: border-box;
-}
-
-body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,p,blockquote,th,td {
-	margin:0;
-	padding:0;
-}
-
 body {
     margin: 1.25rem auto;
     font-family: sans-serif;
     width: 50%;
+    line-height: 1.25;
+    box-sizing: border-box;
 }
 
 h1, h2, ul, form, footer, li {
-    margin-bottom: 1.25rem;
+	margin-top: 0;
+    margin-bottom: 0;
+	padding-top: 0;
+    padding-bottom: 0;
 }
 
 h1{
-    font-size: 2rem;
+    font-size: 2.25rem;
     line-height: 2.5rem;
     font-weight: normal;
 }
@@ -33,6 +27,7 @@ h2 {
 
 li {
     font-size: 1.25rem;
+    line-height: 2.5rem;
 }
 
 form {
@@ -41,8 +36,7 @@ form {
 }
 
 footer {
-    font-size: 0.75rem;
+    font-size: 0.625rem;
     color: #AAA;
-    font-size: 0.75rem;
     text-align: right;
 }
