@@ -1,0 +1,48 @@
+*{
+    font-size: 100%;
+    line-height: 1.25rem;
+    box-sizing: border-box;
+}
+
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,p,blockquote,th,td {
+	margin:0;
+	padding:0;
+}
+
+body {
+    margin: 1.25rem auto;
+    font-family: sans-serif;
+    width: 50%;
+}
+
+h1, h2, ul, form, footer, li {
+    margin-bottom: 1.25rem;
+}
+
+h1{
+    font-size: 2rem;
+    line-height: 2.5rem;
+    font-weight: normal;
+}
+
+h2 {
+    font-size: 1.625rem;
+    line-height: 2.5rem;
+    font-weight: normal;
+}
+
+li {
+    font-size: 1.25rem;
+}
+
+form {
+    font-size: 1.625rem;
+    line-height: 2.5rem;
+}
+
+footer {
+    font-size: 0.75rem;
+    color: #AAA;
+    font-size: 0.75rem;
+    text-align: right;
+}
