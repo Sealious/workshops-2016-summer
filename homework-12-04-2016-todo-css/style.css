@@ -1,0 +1,48 @@
+html {
+    font-size: 100%;
+    line-height: 1.7;
+}
+
+* {
+    margin: 0 auto;
+}
+
+body {
+    font-family: Helvetica, Arial, sans-serif;
+    margin: 1rem auto;
+    width: 50%;
+    box-sizing: border-box;
+}
+
+h1 {
+    font-weight: normal;
+    font-size: 3rem;
+}
+
+h2, form {
+    font-weight: normal;
+    font-size: 2rem;
+}
+
+section {
+    color: #333;
+}
+
+li {
+    list-style: none;
+}
+
+input {
+    font-size: 1.5rem;
+}
+
+footer {
+    color: #AAA;
+    text-align: right;
+}
+
+li>input{
+    transform: scale(1.5);
+    -webkit-transform: scale(1.5);
+    margin-right: 0.5rem;
+}
