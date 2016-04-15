@@ -1,0 +1,66 @@
+html {
+    font-size: 1em;
+    box-sizing: border-box;
+}
+body {
+    font-family: sans-serif;
+    width: 50%;
+    margin: 2rem auto;
+/*    background-image: url(http://basehold.it/i/24px); */
+}
+h1 {
+    font-size: 1.5rem;
+    margin-top: 4rem;
+    line-height: 2rem;
+}
+p {
+    text-align: justify;
+    margin: 0;
+    line-height: 1.5rem;
+    color: #333;
+}
+ul {
+  line-height: 2rem;
+  list-style-type: none;
+  padding: 0;
+}
+h2 {
+    color: #333;
+    text-align: center;
+    font-size: 1.5rem;
+    line-height: 2rem;
+}
+#input-text {
+    width: 50%;
+    height: 2.5rem;
+    padding: 0;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+    border-color: #dbefdc;
+    transition: 1s linear;
+}
+
+#input-text:focus {
+  width: 90%;
+}
+
+#input-button {
+    width: 2.5rem;
+    height: 2.5rem;
+    padding: 0;
+    border-radius: 10px;
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+}
+#input-button:hover {
+  background-color: #81c784;
+}
+
+input[type=checkbox] + label {
+  color:#333;
+}
+input[type=checkbox]:checked + label {
+  color: #ccc;
+  text-decoration: line-through;
+}
