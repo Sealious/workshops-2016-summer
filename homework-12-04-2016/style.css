@@ -20,7 +20,7 @@ div {
 	margin: 0 auto;
 	border-radius: 1rem;
 	padding: 0rem 2rem;
-	border: 0.3rem solid #fff;
+	border: 0.25rem solid #fff;
 }
 
 .header {
@@ -63,7 +63,7 @@ h1 {
 }
 
 .all {
-	border: 0.3rem solid #fff;
+	border: 0.25rem solid #fff;
 	border-radius: 1rem;
 }
 
@@ -95,7 +95,7 @@ h1 {
 	margin: 2rem;
 	margin-top: 0rem;
 	border-radius: 1rem;
-	border: 0.3rem solid #fff;
+	border: 0.25rem solid #fff;
 }
 
 h2 {
@@ -123,7 +123,7 @@ li:hover {
 	font-weight: bold;
 }
 
-input[placeholder], input[text]{
+input[placeholder], input[text] {
 	color: #0d72bc;
 }
 
@@ -133,7 +133,7 @@ li {
 
 button {
 	transition: 800ms;
-	border: 3px solid #FFF;
+	border: 0.2rem solid #FFF;
 	color: #FFF;
 	font-weight: bold;
 	border-radius: 1rem;
