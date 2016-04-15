@@ -1,0 +1,150 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 1rem;
+    font-family: 'Lato', sans-serif;
+	background-color: #2fa5ef;
+	color: #FFF;
+	font-size: 1rem;
+}
+
+div {
+	line-height: 2rem;
+	background-color: #0e83cd;
+}
+.container {
+	width: 48rem;
+	background-color: #0d72bc;
+	margin: 0 auto;
+	border-radius: 1rem;
+	padding: 0rem 2rem;
+	border: 0.3rem solid #fff;
+}
+
+.header {
+	height: 8rem;
+	vertical-align: middle;
+	padding: 1rem;
+	background-color: #0d72bc;
+}
+
+#notatnik {
+	max-width: 8rem;
+	max-height: 8rem;
+	float: left;
+	vertical-align: middle;
+	margin: 0rem 1rem 1rem;
+}
+
+h1 {
+	font-family: 'Josefin Sans', sans-serif;
+	font-size: 3rem;
+}
+
+.new-task {
+	text-align: center;
+	padding: 1rem;
+	float:left;
+	height: 9rem;
+	width: 26.8rem;
+	border-radius: 0rem 1rem 0rem 0rem;
+}
+
+#input-text {
+    width: 15rem;
+    height: 2rem;
+}
+		
+#input-button {
+    height: 2rem;
+	background-color: #0e83cd;
+}
+
+.all {
+	border: 0.3rem solid #fff;
+	border-radius: 1rem;
+}
+
+.data {
+	text-align: center;
+	padding: 1rem;
+	height: 9rem;
+	font-size: 1.5rem;
+	float:left;
+	width: 16.2rem;
+	border-radius: 1rem 0rem 0rem 0rem;
+}
+
+#input-button-save {
+	height: 2rem;
+	background-color: #1f94de;
+}
+
+.content {
+	text-align: center;
+	padding: 1rem;
+	border-radius: 0rem 0rem 1rem 1rem;
+}
+
+.tasks {
+	text-align: center;
+	padding: 1rem;
+	background-color: #1f94de;
+	margin: 2rem;
+	margin-top: 0rem;
+	border-radius: 1rem;
+	border: 0.3rem solid #fff;
+}
+
+h2 {
+	font-size: 2rem;
+	margin: 1rem 0rem;
+}
+
+h3 {
+	line-height: 1rem;
+}
+
+ul {
+	text-align: left;
+	list-style-type: none;
+}
+
+.footer {
+	text-align: center;
+	line-height: 3rem;
+	height: 3rem;
+	background-color: #0d72bc;
+}
+
+li:hover {
+	font-weight: bold;
+}
+
+input[placeholder], input[text]{
+	color: #0d72bc;
+}
+
+li {
+	transition: 500ms;
+}
+
+button {
+	transition: 800ms;
+	border: 3px solid #FFF;
+	color: #FFF;
+	font-weight: bold;
+	border-radius: 1rem;
+}
+
+#input-button:hover, #input-button:active {
+	background-color: #FFF;
+	color: #0e83cd;
+}
+
+#input-button-save:hover, #input-button-save:active {
+	background-color: #FFF;
+	color: #1f94de;
+}
