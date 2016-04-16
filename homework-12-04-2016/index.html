@@ -18,7 +18,7 @@
 
       h3
       {
-            line-height:3rem;
+            line-height:2.5rem;
             font-weight: normal;
             margin: 0 auto;
             text-align: center;
@@ -28,7 +28,7 @@
       }
       h5
       {
-            line-height:2rem;
+            line-height:1.5rem;
             font-weight: normal;
             margin: 0 auto;
             text-align: center;
@@ -45,7 +45,7 @@
         box-shadow: 10px 6px 200px 1px black;
 
       }
-      ol
+      ul
       {
         text-align:left;
         list-style-type:none;
@@ -69,13 +69,19 @@
         outline: 3px solid #0217B2;
       }
 
+      li:hover{
+          background-color: #FFC707;
+            transition: background-color 0.5s;
+      }
+
+
       </style>
 </head>
 <body>
     <article>
-      <center><img src="todo.png" alt="ToDo" width="200"/></center>
+        <center><img src="todo.png" alt="ToDo" width="200"/></center>
         <h5>Dodaj nowe zadanie:</h5>
-        <div><input type="text" placeholder="zadanie"></input>
+        <div><input type="text" placeholder="Zadanie"></input>
         <input type="time" placeholder="czas"></input>
         <input type="date" placeholder="data"></input>
         <button>Dodaj!</button>
@@ -86,7 +92,7 @@
         <input type="date" placeholder="data_wyswietl"></input>
         <button>Pokaż!</button>
       </div>
-      <ol>
+      <ul>
    			<li><input type="checkbox" name="usuwanie" value="1" />07:00 - Obudź się! </li>
    			<li><input type="checkbox" name="usuwanie" value="1" />07:15 - Śniadanko.</li>
         <li><input type="checkbox" name="usuwanie" value="1" />08:00 - Umyj się i ząbki.</li>
@@ -94,7 +100,7 @@
         <li><input type="checkbox" name="usuwanie" value="1" />13:00 - Powrót do domu.</li>
         <li><input type="checkbox" name="usuwanie" value="1" />14:00 - Obiadek.</li>
         <li><input type="checkbox" name="usuwanie" value="1" />15:00 - Do końca dnia rób co chcesz.</li>
-   		</ol>
+   		</ul>
       <div>
         <button>Usuń zaznaczone!</button>
         <button>Przenieś zaznaczone!</button>
