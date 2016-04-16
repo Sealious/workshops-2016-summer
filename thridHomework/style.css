@@ -1,0 +1,47 @@
+*{
+    text-align: center;
+    box-sizing: border-box;
+    color: hsl(0, 0%, 28%);
+    font-family: "Courier New";
+}
+body { 
+    font-size: 62.5%;
+    font-family: "Courier New";
+    color: #b5b5b5;
+    
+    margin: 2.4em; 
+    padding: auto;
+    
+    background-color:#c4c4c4; 
+    background-position: center;
+}
+
+h1 {
+    font-size: 2.4em;
+    position: static;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 6px 6px 8px 1px;
+}
+h2 {
+    font-size: 1.6em; 
+}
+p { 
+    font-size: 1.2em; 
+}
+
+.buttons{
+    border-color: #c4c4c4;
+    border-radius: 10px;
+    background-color:#68d6ff; 
+    padding: 0.6em;
+    margin: 0.3em;
+}
+.tasksData {
+    font-family: monospace;  
+}
+.container{
+    background-color: #a5a5a5;
+    border: 3px solid #68d6ff;
+    
+}
