@@ -9,26 +9,41 @@
       {
         font-size: 1.5em;
         color: #ffffff;
+        background-color: #0217B2;
       }
       body
       {
         font-family: Arial;
       }
 
-      h1,h2,h3
+      h3
       {
-            line-height:4rem;
+            line-height:3rem;
             font-weight: normal;
             margin: 0 auto;
             text-align: center;
-            background-color: #a0a0a0;
+            background-color: #FFC707;
+            color: #000000;
+
       }
+      h5
+      {
+            line-height:2rem;
+            font-weight: normal;
+            margin: 0 auto;
+            text-align: center;
+            background-color: #0217B2;
+            color: #ff;
+      }
+
 
       article
       {
         max-width: 32rem;
         margin: 0 auto;
-        background-color: #656565;
+        background-color: #203BFF;
+        box-shadow: 10px 6px 200px 1px black;
+
       }
       ol
       {
@@ -36,10 +51,13 @@
         list-style-type:none;
         margin:0;
         line-height:2rem;
+        font-size: 0.75rem;
+        background-color: #0217B2;
       }
       div{
         text-align:center;
         line-height:2rem;
+        font-size: 0.75rem;
       }
 
       p
@@ -47,20 +65,23 @@
         text-align: center;
       }
 
+      button:active{
+        outline: 3px solid #0217B2;
+      }
 
       </style>
 </head>
 <body>
     <article>
       <center><img src="todo.png" alt="ToDo" width="200"/></center>
-        <div>Dodaj nowe zadanie:</div>
+        <h5>Dodaj nowe zadanie:</h5>
         <div><input type="text" placeholder="zadanie"></input>
         <input type="time" placeholder="czas"></input>
         <input type="date" placeholder="data"></input>
         <button>Dodaj!</button>
         </div>
 
- 		  <h2>Moja lista zadań</h2>
+ 		  <h3>Moja lista zadań</h3>
       <div>Wyświetl dzień:
         <input type="date" placeholder="data_wyswietl"></input>
         <button>Pokaż!</button>
@@ -78,7 +99,7 @@
         <button>Usuń zaznaczone!</button>
         <button>Przenieś zaznaczone!</button>
       </div>
-      <h2>Ruszaj zrobić kolejne zadanie!!!</h2>
+      <h3>Ruszaj zrobić kolejne zadanie!!!</h3>
     </article>
 </body>
 </html>
