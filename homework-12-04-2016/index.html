@@ -33,13 +33,17 @@
 	<section>
             <h2>Check if u done it?!</h2>
             <form action="#">
+            <input type="radio" id="radio1" name="radios" value="all" checked>
+            <label for="radio1">Mon</label>
+            <input type="radio" id="radio2" name="radios"value="false">
+            <label for="radio2">Thu</label>
+            <input type="radio" id="radio3" name="radios" value="true">
+            <label for="radio3">Wed</label> 
             <ul>
                 <li><input type="checkbox">BRB my dog is on fire.</li>
                 <li><input type="checkbox">Look after fish cause it can drown.</li>
                 <li><input type="checkbox">Buy some drugs.</li>
                 <li><input type="checkbox">Call 911.</li>
-                <li><input type="checkbox">Sealcode homework!</li>
-                <li><input type="checkbox">Buy hedgehog.</li>
                 <li><input type="checkbox" disabled>You've already done it!</li>
             </ul>
             <button class="btn btn-two fa fa-check " type="submit">Done it!</button>

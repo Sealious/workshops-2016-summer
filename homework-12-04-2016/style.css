@@ -22,7 +22,7 @@
 		height: 6rem;
 		margin-bottom: 1rem;
 	}
-	
+
     p {
  
         line-height: 1rem;
@@ -55,6 +55,31 @@
         color: #333;
         margin-left: 5rem;
 	}
+	
+	input[type=radio] {
+    	display:none;
+    }
+
+	input[type=radio] + label {
+    	display:inline-block;
+    	margin: -.1rem;
+    	padding: .2rem .5rem;
+    	border-radius: 5%;
+  		border: 1;
+  		border-width: .01rem;
+  		border-style: solid;
+  		border-color: #333;
+  		background: transparent;
+	}
+
+	input[type=radio]:checked + label { 
+   		background-image: none;
+   	    border-radius: 5%;
+  		border: 1;
+  		border-style: solid;
+  		border-color: #333;
+    	background-color: #d0d0d0;
+	}
 
 	a:link {
     	color: black;
@@ -79,7 +104,7 @@
 	.btn{
 	  	height: 2rem; 
 	  	width: 4rem;
-	  	border-radius: 10%;
+	  	border-radius: 5%;
   		border: 1;
   		border-style: solid;
   		border-color: #333;
@@ -115,7 +140,7 @@
 	}	
 	
 	.btn-two {
-		margin-top: -.1rem;
+		margin-top: .33rem;
 	}
 	
 	ul {
