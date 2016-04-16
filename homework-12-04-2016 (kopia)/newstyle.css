@@ -62,7 +62,6 @@
 		float: none;
 		list-style: none;
 		position: relative;
-		margin-left: -2rem;
   	}
   	
   	.tab-pos {
@@ -71,7 +70,6 @@
   	}
   
   	input[type="radio"] {
-    	margin-left: -1rem;
     	position: absolute;
     	display: none;
   	}
@@ -181,7 +179,6 @@
 	}
 
 	.footer {
-		margin-left: -.3rem;
 		padding-top: 2rem;
 		clear: both;
 		width: 100%;
