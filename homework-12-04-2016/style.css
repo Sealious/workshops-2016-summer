@@ -1,11 +1,11 @@
-    html {
-        font-size: 1.5em;
-    }
+    	html {
+        	font-size: 1.5em;
+    	}
     
-    body {
-        margin: 1rem;
-        font-family: sans-serif;
-    }
+    	body {
+        	margin: 1rem;
+        	font-family: sans-serif;
+    	}
 	
 	.logo {
 		padding: .5rem;
@@ -14,7 +14,7 @@
 		height: 5rem;
 		width: 5rem;
 		float: left;
-		border-radius: 60%;
+		border-radius: 65%;
 	}
 	
 	header {
@@ -23,28 +23,31 @@
 		margin-bottom: 1rem;
 	}
 
-    p {
- 
-        line-height: 1rem;
-        font-size: .5rem;
-    }
+    	p {
+        	line-height: 1rem;
+        	font-size: .5rem;
+    	}
 
-    h1, h2, h3 {
-        margin: 0rem;
-        line-height: 2rem;
-        margin-bottom: .5rem;
-        font-weight: normal;
-    }
+    	h1, h2, h3 {
+        	margin: 0rem;
+        	line-height: 2rem;
+        	margin-bottom: .5rem;
+	        font-weight: normal;
+    	}
 
 	h1 {
 		margin-top: 2rem;
 		font-size: 2rem; 
 		float: left;
 	}
+	
+	.check {
+		margin-bottom: -.5rem;
+	}
 
 	select {
-     	background: transparent;
-     	font-size: .7rem;
+     		background: transparent;
+     		font-size: .7rem;
 		width: 4.2rem;
 		height: 1.2rem;
 		}
@@ -52,8 +55,8 @@
 	section {
 		float: left;
 		width: 20rem;
-        color: #333;
-        margin-left: 5rem;
+        	color: #333;
+		margin-left: 5rem;
 	}
 	
 	.tabs {
@@ -66,71 +69,71 @@
   	}
   	
   	.tab-pos {
-    	float: left;
-    	display: block;
+    		float: left;
+    		display: block;
   	}
   
   	input[type="radio"] {
-    	margin-left: -1rem;
-    	position: absolute;
-    	display: none;
+    		margin-left: -1rem;	
+    		position: absolute;
+    		display: none;
   	}
   
 	label {
-    	display: block;
-    	margin-right: .1rem;
-    	padding: .1rem .3rem;
-    	border-radius: 5%;
+    		display: block;
+    		margin-right: .1rem;
+    		padding: .1rem .3rem;
+    		border-radius: 5%;
   		border: 1;
   		border-width: .01rem;
   		border-style: solid;
   		border-color: #333;
   		background: transparent;
-    	cursor: pointer;
-    	position: relative;
-    }  
+    		cursor: pointer;
+    		position: relative;
+    	}  
   
   	.tab-content{
-	    display: none; 
-	    overflow: hidden;
-	    width: 100%;
-	    padding: .5rem;  
-	    position: absolute;
-	    left: 0; 
+	    	display: none; 
+		overflow: hidden;
+	    	width: 100%;
+	    	padding: .5rem;  
+	    	position: absolute;
+	    	left: 0; 
   	}
   
   	[id^="tab"]:checked ~ [id^="tab-content"] {
-    	display: block;
+    		display: block;
  	}
 
 	input[type=radio]:checked + label { 
    		display: block;
    		background-image: none;
-   	    border-radius: 5%;
+   	    	border-radius: 5%;
   		border: 1;
   		border-style: solid;
   		border-color: #333;
-    	background-color: #d0d0d0;
+    		background-color: #d0d0d0;
 	}
 
 	a:link {
-    	color: black;
-    	text-decoration: none;
+    		color: black;
+    		text-decoration: none;
 	}
 
 	a:visited {
-    	color: black;
-    	text-decoration: none;
+    		color: black;
+    		text-decoration: none;
 	}
 
 	a:hover {
-    	color: black;
-        text-decoration: underline;
+    		color: black;
+        	text-decoration: underline;
 	}
 
 	a:active {
-    	color: black;
-    	text-decoration: underline;
+    		color: black;
+    		text-decoration: underline;
 	}
 
 	.btn{
@@ -140,6 +143,7 @@
   		border: 1;
   		border-style: solid;
   		border-color: #333;
+  		border-width: .01rem;
   		display: block;
   		line-height: 1rem;
   		background: transparent;
@@ -158,7 +162,6 @@
   		color: #FFF;
   		background: #A8A8A8;
   		transition: all 0.3s;
-  		-webkit-transition: all 0.3s;
 	}
 
 	.btn:hover:before{
@@ -169,7 +172,7 @@
 
 	.btn-one {
 		margin-left: 16.9rem;
-		margin-top: 1.2rem;
+		margin-top: .7rem;
 	}	
 	
 	.btn-two {
@@ -182,7 +185,7 @@
 
 	.footer {
 		margin-left: -.3rem;
-		padding-top: 2rem;
+		padding-top: 2.5rem;
 		clear: both;
 		width: 100%;
 		text-align: center;
