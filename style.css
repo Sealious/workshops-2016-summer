@@ -1,0 +1,59 @@
+﻿
+*{
+	box-sizing: border-box;
+	background-color: #F5F5F5;
+	font-family: sans-serif;
+	line-height: 0 auto;
+
+}
+
+h1, h2{
+	color: red;
+	font-size: 2rem;
+	padding-left: 0 auto;
+	margin: 0 auto;
+
+}
+
+h1{
+	font-family: Broadway;
+	color: #696969;
+}
+
+div{
+	line-height: 2rem;
+	background-color: #F5F5F5;
+	margin: 0 auto;
+}
+
+#container
+{
+	width: auto;
+	margin-left: 2rem;
+	margin-right: auto;
+}
+
+button
+{
+	position: relative;
+	margin-left: 19rem;
+	border-radius: 2rem;
+
+}
+
+.box
+{
+	width: 200px;
+}
+
+.box:focus
+{
+	width: 400px;
+	background: #aaaaaa;
+}
+
+
+
+select{
+	color: red;
+}
