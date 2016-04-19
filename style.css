@@ -1,29 +1,55 @@
-﻿
+
 *{
 	box-sizing: border-box;
 	background-color: #F5F5F5;
 	font-family: sans-serif;
 	line-height: 0 auto;
-
 }
 
-h1, h2{
-	color: red;
-	font-size: 2rem;
-	padding-left: 0 auto;
-	margin: 0 auto;
-
-}
-
-h1{
+.bigtitle
+{
+	margin-left: 2rem;
 	font-family: Broadway;
+	font-size: 25px;<span class="bigtitle">TASK TO DO</span>
 	color: #696969;
 }
 
-div{
+div
+{
 	line-height: 2rem;
 	background-color: #F5F5F5;
 	margin: 0 auto;
+}
+
+img
+{
+	width: 211px;
+	height: 82,5px;
+}
+
+#topbar
+{
+	background-color: #4d79ff;
+	padding: 10px;
+	margin-top: 20px;
+	margin-bottom: 25px;
+	height: 92,5px;
+}
+
+#topbarL
+{
+	float: left;
+	margin-left: 5px;
+	background-color: #ff0000;
+	width: 211px;
+	height: 82,5px;
+}
+
+#topbarR
+{
+	float: left;
+	margin-left: 5px;
+	background-color: red;
 }
 
 #container
@@ -50,10 +76,4 @@ button
 {
 	width: 400px;
 	background: #aaaaaa;
-}
-
-
-
-select{
-	color: red;
 }
