@@ -1,70 +1,73 @@
 
-*{
-	box-sizing: border-box;
-	background-color: #F5F5F5;
+body
+{
+	background-color: #f5f5f5;
 	font-family: sans-serif;
 	line-height: 0 auto;
-}
-
-.bigtitle
-{
-	margin-left: 2rem;
-	font-family: Broadway;
-	font-size: 25px;<span class="bigtitle">TASK TO DO</span>
-	color: #696969;
-}
-
-div
-{
-	line-height: 2rem;
-	background-color: #F5F5F5;
-	margin: 0 auto;
-}
-
-img
-{
-	width: 211px;
-	height: 82,5px;
-}
-
-#topbar
-{
-	background-color: #4d79ff;
-	padding: 10px;
-	margin-top: 20px;
-	margin-bottom: 25px;
-	height: 92,5px;
-}
-
-#topbarL
-{
-	float: left;
-	margin-left: 5px;
-	background-color: #ff0000;
-	width: 211px;
-	height: 82,5px;
-}
-
-#topbarR
-{
-	float: left;
-	margin-left: 5px;
-	background-color: red;
+	box-sizing: border-box;
+	margin: 0 !important;
 }
 
 #container
 {
-	width: auto;
+	color: #393939;
+}
+
+#bigtitle
+{
 	margin-left: 2rem;
+	margin-top: 1rem;
+	font-family: Broadway;
+	font-size: 25px;
+	color: #393939;
+}
+
+#logo
+{
+	width: 200px;
+	height: 100px;
+	margin-left: auto;
 	margin-right: auto;
 }
 
-button
+#topbarmenu
 {
-	position: relative;
-	margin-left: 19rem;
-	border-radius: 2rem;
+	background-color: #4d79ff;
+	color: #ffffff;
+	/*padding: 10px 0;*/
+	padding: 5px;
+	height: 20px;
+}	
 
+#tasks
+{
+	line-height: 2rem;
+	margin-top: 1rem;
+	margin-left: 0rem;
+}
+
+#choose
+{
+	color: #b30000;
+}
+
+.option
+{
+	float: left;
+	background-color: #4d79ff;
+	/*border-right: 2px dotted #ffffff;
+	padding: 5px;*/
+	padding-left: 10px;
+	padding-right: 10px;
+	text-align: center;
+	font-size: 15px;
+	text-align: center;
+}
+
+.option:hover
+{
+	background-color: #b30000;
+	cursor: pointer;
 }
 
 .box
@@ -76,4 +79,24 @@ button
 {
 	width: 400px;
 	background: #aaaaaa;
+}
+
+button
+{
+	margin-left: 2rem;
+	border-radius: 2rem;
+	background-color: #393939;
+	color: #ffffff;
+}
+
+.footer
+{
+	margin-top: 2rem;
+	background-color: #4d79ff;
+	color: #ffffff;
+	padding: 5px;
+	height: 20px;
+	font-size: 15px;
+	text-align: center;
+	
 }
