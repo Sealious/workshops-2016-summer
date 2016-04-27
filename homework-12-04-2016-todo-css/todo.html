@@ -5,21 +5,22 @@
         <meta charset="utf-8">
         <link rel="stylesheet" type="text/css" href="style.css"/>
         <link rel="stylesheet" href="http://basehold.it/27">
+        <script src="script.js"></script>
     </head>
     <body>
-        <h1>Aplikacja Todo</h1>
+        <h1 id="h">Aplikacja Todo</h1>
         <p>Zarządzaj swoim czasem.</p>
         <p>Tylko teraz: dwa zadania, w cenie jednego!</p>
         <section class="todo-add">
             <h2>Dodaj zadania do listy</h2>
             <form action="">
                 <input type="text" placeholder="Nowe zadanie"/>
-                <input type="submit" value="Dodaj"/>
+                <input type="submit" value="Dodaj" id="btn" />
             </form>
         </section>
-        <section class="todos">
+        <section>
             <h2>Zaplanowane zadania</h2>
-            <ul>
+            <ul id="todos">
                 <li><input type="checkbox" id="1"><label for="1"><em>Zrozumieć vertical rhytm, line-height, margin-bottom, rem</em></label></li>
                 <li><input type="checkbox" id="2"><label for="2">Pracować nad projektem</label></li>
                 <li><input type="checkbox" id="3"><label for="3">Zrobić zakupy</label></li>
