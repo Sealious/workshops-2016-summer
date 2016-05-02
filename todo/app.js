@@ -39,13 +39,13 @@ function showTask(task) {
   if(task.completed) {
     checkbox.checked = 'checked';
   }
+  checkbox.onclick = function() {
+    task.completed = !task.completed;
+  }
   newTask.appendChild(checkbox);
 
   taskLabel.textContent = task.content;
   newTask.appendChild(taskLabel);
-  newTask.onclick = function() {
-    task.completed = !task.completed;
-  }
   list.appendChild(newTask);
   if(tasks.length) {
     document.getElementById('alert').style.display = 'none';
