@@ -73,9 +73,11 @@ function showEmptyListMessage() {
 }
 
 function removeCompleted() {
-  tasks = tasks.filter(task => !task.completed);
-  clearList();
-  showTasks();
+  if(tasks.length > 0) {
+    tasks = tasks.filter(task => !task.completed);
+    clearList();
+    showTasks();
+  }
 }
 
 function clearList() {
