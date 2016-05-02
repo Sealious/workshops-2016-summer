@@ -43,7 +43,9 @@ function showTask(task) {
 
   taskLabel.textContent = task.content;
   newTask.appendChild(taskLabel);
-
+  newTask.onclick = function() {
+    task.completed = !task.completed;
+  }
   list.appendChild(newTask);
 }
 
