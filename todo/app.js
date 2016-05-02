@@ -49,8 +49,20 @@ function showTask(task) {
 
 function showTasks() {
   tasks.forEach(showTask);
+function removeCompleted() {
+  tasks = tasks.filter(task => !task.completed);
+  clearList();
+  showTasks();
+}
+
+function clearList() {
+  var list = document.querySelector('ul');
+  while (list.hasChildNodes()) {
+      list.removeChild(list.lastChild);
+  }
 }
 
 showTasks();
 
 document.getElementById('todo-form').onsubmit = addTask;
+document.getElementById('remove-completed').onclick = removeCompleted;
