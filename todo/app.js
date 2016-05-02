@@ -48,7 +48,10 @@ function showTask(task) {
   newTask.appendChild(taskLabel);
   list.appendChild(newTask);
   if(tasks.length) {
-    document.getElementById('alert').style.display = 'none';
+    var message = document.getElementById('alert');
+    if(message) {
+      message.style.display = 'none';
+    }
   }
 }
 
