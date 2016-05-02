@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>To do, to do, to do to do to do, to do to doooooo</title>
+    <style type="text/css">
+      html {
+          font-size: 1.5em;
+          color: #333;
+      }
+
+      body {
+          margin: 1rem auto;
+          font-family: Helvetica, sans-serif;
+          line-height: 1.5rem;
+          max-width: 32rem;
+          box-sizing: border-box;
+          font-size: .75rem;
+      }
+
+      h1 {
+          font-size: 2rem;
+          text-align: center;
+      }
+
+      ul > li {
+          list-style-type: none;
+      }
+
+      input[type=checkbox] + span {
+          transition-property: all;
+          transition-duration: 500ms;
+      }
+
+      input[type=checkbox]:checked + span {
+          text-decoration: line-through;
+          color: gray;
+      }
+
+      form {
+        text-align: center;
+      }
+
+    </style>
+    <meta charset="utf-8"/>
+</head>
+<body>
+    <h1>To do list</h1>
+    <form>
+        <input type="text" placeholder="Treść" required="true" />
+        <input type="submit" value="Dodaj">
+        <input type="button" value="Usuń zakończone"/>
+      </form>
+      <ul>
+          <li><input type="checkbox"/><span>Odrobić zadanie domowe</span></li>
+          <li><input type="checkbox"/><span>Napisać maila</span></li>
+          <li><input type="checkbox"/><span>Spakować się</span></li>
+          <li><input type="checkbox"/><span>Kupić klapki</span></li>
+          <li><input type="checkbox" checked="true"><span>Zjeść obiad</span></input></li>
+      </ul>
+</body>
+</html>
