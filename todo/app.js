@@ -47,10 +47,31 @@ function showTask(task) {
     task.completed = !task.completed;
   }
   list.appendChild(newTask);
+  if(tasks.length) {
+    document.getElementById('alert').style.display = 'none';
+  }
 }
 
 function showTasks() {
-  tasks.forEach(showTask);
+  if(tasks.length) {
+    tasks.forEach(showTask);
+  } else {
+    showEmptyListMessage();
+  }
+}
+
+function showEmptyListMessage() {
+  var message = document.getElementById('alert');
+  if(!message) {
+    message = document.createElement('h3');
+    message.style.textAlign = 'center';
+    message.textContent = 'Nie masz żadnych zadań do wykonania, dobra robota!';
+    message.id = 'alert';
+    document.querySelector('body').appendChild(message);
+  }
+  message.style.display = 'block';
+}
+
 function removeCompleted() {
   tasks = tasks.filter(task => !task.completed);
   clearList();
