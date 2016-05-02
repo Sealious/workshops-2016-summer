@@ -1,5 +1,5 @@
 var tasks = [
-  {
+/*  {
     content: 'Odrobić zadanie domowe',
     completed: false
   },
@@ -18,7 +18,7 @@ var tasks = [
   {
     content: 'Zjeść obiad',
     completed: true
-  }
+  } */
 ];
 
 function addTask() {
