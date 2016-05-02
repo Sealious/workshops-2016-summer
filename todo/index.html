@@ -44,18 +44,19 @@
     <meta charset="utf-8"/>
 </head>
 <body>
-    <h1>To do list</h1>
-    <form>
-        <input type="text" placeholder="Treść" required="true" />
-        <input type="submit" value="Dodaj">
-        <input type="button" value="Usuń zakończone"/>
-      </form>
-      <ul>
-          <li><input type="checkbox"/><span>Odrobić zadanie domowe</span></li>
-          <li><input type="checkbox"/><span>Napisać maila</span></li>
-          <li><input type="checkbox"/><span>Spakować się</span></li>
-          <li><input type="checkbox"/><span>Kupić klapki</span></li>
-          <li><input type="checkbox" checked="true"><span>Zjeść obiad</span></input></li>
-      </ul>
+  <h1>To do list</h1>
+  <form id="todo-form" action="#">
+    <input type="text" placeholder="Treść" required="true" id="todo-content" />
+    <input type="submit" value="Dodaj">
+    <input type="button" value="Usuń zakończone"/>
+  </form>
+  <ul>
+    <li><input type="checkbox"/><span>Odrobić zadanie domowe</span></li>
+    <li><input type="checkbox"/><span>Napisać maila</span></li>
+    <li><input type="checkbox"/><span>Spakować się</span></li>
+    <li><input type="checkbox"/><span>Kupić klapki</span></li>
+    <li><input type="checkbox" checked="true"><span>Zjeść obiad</span></input></li>
+  </ul>
+  <script src="app.js" charset="utf-8"></script>
 </body>
 </html>
