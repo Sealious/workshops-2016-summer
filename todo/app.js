@@ -49,7 +49,7 @@ function showTask(task) {
   list.appendChild(newTask);
   if(tasks.length) {
     var message = document.getElementById('alert');
-    if(message) {
+    if(message && message.style.display !== 'none') {
       message.style.display = 'none';
     }
   }
