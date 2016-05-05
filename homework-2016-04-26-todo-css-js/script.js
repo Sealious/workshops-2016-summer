@@ -47,20 +47,19 @@ var render = function () {
 var markDone = function (name, checked) {
     var i;
     for (i = 0; i < model.length; i++) {
-        if (model[i].name == name) break;
+        if (model[i].name === name) break;
     }
     model[i].done = checked;
     render();
 };
 
-var removeItem = function (itemName) {
-    var i = 0;
-    for (; i < model.length && model[i].name != itemName;)
-        i++;
-    if (i != model.length) {
-        model.splice(i, 1);
-        render();
+var removeItem = function (name) {
+    var i;
+    for (i = 0; i < model.length; i++) {
+        if (model[i].name === name) break;
     }
+    model.splice(i, 1);
+    render();
 };
 
 var addItem = function () {
