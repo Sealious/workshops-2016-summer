@@ -15,9 +15,6 @@ p, li, ul, label {
 ul {
     margin: auto;
     padding: 0;
-    perspective: 600px;
-    -webkit-perspective: 600px;
-    perspective-origin: 25% 75%;
 }
 
 body {
@@ -42,18 +39,15 @@ li {
     background-color: #fdfd96;
     font-size: 1rem;
     border: 1px solid gray;
-    border-width: thin;
-    border-color: gray;
     border-top-right-radius: 10px;
     border-bottom-left-radius: 10px;
     line-height: calc(1.7rem - 2px);
-    line-height: -moz-calc(1.7rem - 2px); /* nie działa */
     padding-left: 0.5rem;
     transition: background-color 0.75s;
     will-change: color;
 }
 
-li:hover{
+li:hover {
     background-color: #ffb437;
 }
 
@@ -69,10 +63,35 @@ input[type=text] {
     padding: 1px;
     height: calc(2rem - 6px);;
 }
+
 input[type=text]:focus {
     background-color: #aec6cf;
 }
 
 input[type=button]:active {
     background-color: #77cc77;
+}
+
+input[type=checkbox] {
+    float: left;
+    margin-right: 0.5em;
+    margin-top: 0.5em;
+}
+
+.remover {
+     float: right;
+     vertical-align: middle;
+     margin-right: 0.5em;
+     cursor: default;
+ }
+
+.remover:hover {
+    color: #ffb437;
+    background-color: black;
+}
+
+.stroke {
+    text-decoration: line-through;
+    background-color: rgba(255, 252, 186, 1);
+    transition: background-color 0.75s;
 }
