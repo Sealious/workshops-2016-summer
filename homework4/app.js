@@ -51,12 +51,27 @@ render();
 
 
 function addTask(){
-	console.log("add");
 	var date_now = new Date().toJSON().slice(0,10);
 	var title =  document.getElementById('new-title').value;
+
+  if(title == "")
+  {
+    alert("Nie można dodać pustego taska!");
+    return ;
+  }
+    
 	var done  = false;
 	tasks.push({title,date_now, done});
   render();
+  document.getElementById('new-title').value = "";
+}
+
+
+function inputKeyUp(e) {
+    e.which = e.which || e.keyCode;
+    if(e.which == 13) {
+      addTask;
+    }
 }
 
 document.getElementById("create-new-task").onclick = addTask
