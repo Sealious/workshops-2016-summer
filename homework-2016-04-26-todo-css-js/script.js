@@ -1,9 +1,9 @@
 var model = [
-    "Zrozumieć vertical rhytm, line-height, margin-bottom, rem",
-    "Pracować nad projektem",
-    "Zrobić zakupy",
-    "Posprzątać mieszkanie",
-    "Zrobić pranie",
+    {name: "Zrozumieć vertical rhytm, line-height, margin-bottom, rem", done: false},
+    {name: "Pracować nad projektem", done: false},
+    {name: "Zrobić zakupy", done: false},
+    {name: "Posprzątać mieszkanie", done: false},
+    {name: "Zrobić pranie", done: false},
 ];
 
 var render = function() {
@@ -13,7 +13,7 @@ var render = function() {
     }
     for (var item of model) {
         var listItem = document.createElement('li');
-        var liText = document.createTextNode(item);
+        var liText = document.createTextNode(item.name);
         listItem.appendChild(liText);
         list.appendChild(listItem);
         listItem.onclick = function(){
@@ -23,9 +23,11 @@ var render = function() {
     refreshCounter();
 }
 
-var removeItem = function(item){
-    var i = model.indexOf(item);
-    if(i != -1) {
+var removeItem = function(itemName){
+    var i=0;
+    for(; i<model.length && model[i].name != itemName; i++) ;
+    //var i = model.indexOf(item);
+    if(i != model.length) {
     	model.splice(i, 1);
         render();
     }
@@ -37,7 +39,7 @@ var addItem = function(){
     var textInput = document.querySelector('input[type=text]');
     var input = textInput.value;
     if(!input) return;
-    model.push(input);
+    model.push({name: input, done: false});
     textInput.value = "";
     render();
 }
