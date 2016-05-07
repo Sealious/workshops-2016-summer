@@ -37,4 +37,7 @@ var checkboxCounter = function() {
 }
 
 var checkbox = document.querySelectorAll('input[type="checkbox"]');
-checkbox.addEventListener("click",checkboxCounter());
+checkbox.addEventListener("change",function(){
+  alert('event triggered');
+  checkboxCounter()
+});
