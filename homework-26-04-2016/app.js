@@ -62,7 +62,7 @@ function addTask() // dodaj zadanie
 
 function keyDown(event) // akcja dla naciśniętego klawisza
 {
-	e.which = e.which || e.keyCode;
+	event.which = event.which || event.keyCode;
 	if (event.which==13) // czy naciśnięto klawisz enter?
 	{
 		addTask(); // uruchom dodawanie zadania, jeśli wciśnięto klawisz enter
