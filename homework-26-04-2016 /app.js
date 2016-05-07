@@ -3,6 +3,11 @@ var addItem = function() {
     var listItem = document.createElement("li");
 
     var input = document.querySelector("#textInput").value;
+    if (input == "") {
+        alert("Field cannot be empty!");
+        return;
+    }
+
     var liText = document.createTextNode(input);
 
     var checkbox = document.createElement("input");
@@ -48,4 +53,12 @@ addButton.addEventListener("click", function() {
     addItem();
     refreshCounter();
     doneCounter();
+    document.querySelector("#textInput").value = "";
+});
+
+var input = document.querySelector("#textInput");
+input.addEventListener("keyup", function(e) {
+    if (e.keyCode == 13) {
+        addButton.click();
+    }
 });
