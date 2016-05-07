@@ -6,7 +6,6 @@
     <meta charset="utf-8">
     <!--  <link rel="stylesheet" href="http://basehold.it/24"> !-->
     <link rel="stylesheet" type="text/css" href="style.css">
-    <script src="app.js"></script>
 </head>
 
 <body>
@@ -29,20 +28,25 @@
         <ul id="todo-list">
             <li>
 
-                <input type="checkbox"> First task
+                <input type="checkbox" id="task1" name="task">
+                <label for="task1">First task</label>
 
             </li>
             <li>
-                <input type="checkbox"> Second task
+                <input type="checkbox" id="task2" name="task">
+                <label for="task2">Second task</label>
             </li>
         </ul>
         <p>
-            Active tasks: <span id "counter">2</span>
+            Active tasks: <span id ="counter">2</span>
         </p>
         <p>
             Done: <span id="boxCounter">0</span>
         </p>
     </section>
+
+    <script src="app.js"></script>
+
 </body>
 
 </html>
