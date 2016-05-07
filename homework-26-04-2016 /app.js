@@ -37,6 +37,12 @@ var checkboxCounter = function() {
 }
 
 var checkbox = document.querySelectorAll('input[type="checkbox"]');
+console.log(checkbox);
+for (var variable in checkbox) {
+  if (checkbox.hasOwnProperty(variable)) {
+    console.log(checkbox[variable]);
+  }
+}
 checkbox.addEventListener("change",function(){
   alert('event triggered');
   checkboxCounter()
