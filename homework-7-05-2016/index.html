@@ -1,0 +1,46 @@
+<!doctype html> 
+<html>
+    <head>
+        <title>Aplikacja ToDo</title>
+        <meta charset="utf-8">
+        <link href="img/favicon/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+		<link rel="stylesheet" type="text/css" href="style.css"/>
+		<link href='https://fonts.googleapis.com/css?family=Lato:400,900|Josefin+Sans:400,700&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    </head>
+    <body>
+		<div class="container">
+			<div class="header">
+				<img alt="Obrazek" src="obrazek.png" id="notatnik"/>
+				<h1>Co masz do zrobienia?</h1>
+			</div>
+			<div class="all">
+				<div class="data">
+						<h3>Data:</h3> 7.05.2016r.
+				</div>
+				<div class="new-task">
+					Masz coś jeszcze do zrobienia? Dodaj to do listy zadań!
+					<br> Wpisz zadanie i wciśnij przycisk "Dodaj" <br> <input type="text" name="task" placeholder="Wpisz nowe zadanie" id="input-text"/>
+					<button type="submit" id="input-button">Dodaj</button>
+				</div>
+				<div style="clear: both;"></div>
+				<div class="content">
+					<div class="tasks">
+						<h2>Zaplanowałeś do zrobienia:</h2>
+						<div id="info"></div>
+						<div id="list-div">
+							<ul id="list">
+
+							</ul>
+						</div>
+						Jeśli wykonałeś jakieś zadanie, zaznacz je i wciśnij "Zapisz!" (opcja będzie dostępna później) <br>
+						<button type="submit" id="input-button-save">Zapisz!</button>
+					</div>
+				</div>
+			</div>
+			<div class="footer">
+				Aplikację wykonał Marcin Szczepański w ramach warsztatów Sealcode.
+			</div>
+		</div>
+	    <script src="app.js"></script>
+	</body>
+</html>
