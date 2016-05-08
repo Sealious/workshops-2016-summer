@@ -117,8 +117,19 @@
       render();
     }
 
+    var lastColor = undefined;
+
     function setColor(event){
-      console.log(event.target.getAttribute('my-color'));
+      if(lastColor !== event.target && lastColor != undefined){
+        var c =lastColor.className;
+        lastColor.className = c.replace(/ selected-div/i, '');
+      }
+      if(event.target.className.indexOf('selected') === -1){
+        event.target.className += ' selected-div';
+        lastColor = event.target;
+      } else {
+        event.currentTarget.className = event.currentTarget.className.replace(/ selected-div/i, '');
+      }
       todoColor = event.target.getAttribute('my-color');
     }
 
