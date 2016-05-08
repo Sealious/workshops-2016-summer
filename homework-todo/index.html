@@ -12,14 +12,19 @@
   <div class="container">
     <h1 class="main-title">Todo app</h1>
 
+    <div>
+      <div class="blue-div" my-color='blue' onclick='setColor(event)'></div>
+      <div class="red-div" my-color='red' onclick='setColor(event)'></div>
+      <div class="green-div" my-color='green' onclick='setColor(event)'></div>
+      <div class="yellow-div" my-color='yellow' onclick='setColor(event)'></div>
+    </div>
     <div class="inputs">
       <input type="text" class="user-todo-text" placeholder="I have to ..." id="user-input"><button class="save-todo" id="user-button">Save todo</button>
     </div>
 
 
-    <ul id="my-todos">
+    <ul id="my-todos"></ul>
 
-    </ul>
   </div>
 
   <script>
@@ -32,6 +37,7 @@
       { content: 'Clone', importance: 'green', id: '4824431bba2'}
     ];
 
+    var todoColor = 'blue';
     var myTodos = document.getElementById('my-todos');
 
     function renderTodo(item){
@@ -104,12 +110,18 @@
     function addTodo(){
       var userInput = document.getElementById('user-input');
       var newTodo = {
-        content: userInput.value, importance: 'blue', id: Math.random().toString(36).substring(7).toString()
+        content: userInput.value, importance: todoColor, id: Math.random().toString(36).substring(7).toString()
       }
       data.unshift(newTodo);
       userInput.value = '';
       render();
     }
+
+    function setColor(event){
+      console.log(event.target.getAttribute('my-color'));
+      todoColor = event.target.getAttribute('my-color');
+    }
+
 
     render();
 

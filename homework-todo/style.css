@@ -106,6 +106,7 @@ li > i{
 }
 
 .inputs{
+  margin-top: 0.5rem;
   height:2.25rem;
   margin-bottom: 1.5rem;
 }
@@ -124,4 +125,40 @@ li > input{
   top: 1.5rem;
   margin-top: -2px;
   line-height: 3rem;
+}
+
+.blue-div{
+  width: 1.5rem;
+  height: 1.5rem;
+  background: rgb(113, 164, 232);
+  display: inline-block;
+  cursor: pointer;
+}
+
+.red-div{
+  width: 1.5rem;
+  height: 1.5rem;
+  background: rgb(232, 113, 113);
+  display: inline-block;
+  cursor: pointer;
+}
+
+.yellow-div{
+  width: 1.5rem;
+  height: 1.5rem;
+  background: rgb(246, 231, 94);
+  display: inline-block;
+  cursor: pointer;
+}
+
+.green-div{
+  width: 1.5rem;
+  height: 1.5rem;
+  background: rgb(147, 232, 113);
+  display: inline-block;
+  cursor: pointer;
+}
+
+.selected-div{
+  border: 4px solid #424242;
 }
