@@ -21,7 +21,7 @@
 		
 	</section>
 	<section class="list">
-		<ul>
+		<ul id="id-list">
 			<li class="list-task list-task-important">Eat breakfast</li>
 			<li class="list-task list-task-important">Get some sleep</li>
 			<li class="list-task">Kill my boyfriend</li>
@@ -39,13 +39,13 @@
 			<option value="Later">Later</option>
 		</select>
 		<form>
-			<textarea class="textbox" placeholder="I want this sh*t to be done..." class="form-new-task"></textarea>
+			<textarea id="textarea" class="textbox" placeholder="I want this sh*t to be done..." class="form-new-task"></textarea>
 			
 			<div class="checkbox">
-				<input type="checkbox" id="c" name="important" value="1">
-				<label for"c"><span></span>Important</label>
+				<input type="checkbox" id="check" name="important" >
+				<label for"check"><span></span>Important</label>
 			</div>
-			<input class="submit" type="submit" value="Add"></input>
+			<input id="submit-button" class="submit" type="button" value="Add"></input>
 
 		</form>
 			
@@ -53,5 +53,6 @@
 	<footer>
 		<p>Made without <img src="heart.png" class="love-icon"></p>
 	</footer>
+	<script type="text/javascript" src="script.js"></script>
 </body>
 </html>

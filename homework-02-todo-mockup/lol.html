@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<script>
+		var addItem = function(){
+    var list = document.querySelector("#list");
+    var listItem = document.createElement('li');
+
+    var input = document.querySelector('input').value;
+    var liText = document.createTextNode(input);
+
+    listItem.appendChild(liText);
+    list.appendChild(listItem);
+}
+
+var refreshCounter = function(){
+    var list = document.querySelector("#list");
+    var counter = document.querySelector('#counter');
+    counter.textContent = list.querySelectorAll('li').length;
+
+}
+
+var addButton = document.querySelector("#addButton");
+addButton.addEventListener('click', function(){
+    addItem();
+    refreshCounter();
+});	
+	</script>
+	<ul id="list">
+    <li>Make dinner</li>
+    <li>Prepare presentation</li>
+    <li>Feed my cat</li>
+</ul>
+<input type="text">
+<button id="addButton">Add new task</button>
+<p>Active tasks: <span id="counter">3</span><p>
+</body>
+</html>
