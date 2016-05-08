@@ -1,0 +1,127 @@
+
+body{
+  font-family: sans-serif;
+  background: rgb(244, 244, 244);
+}
+
+.container{
+  max-width: 36rem;
+  margin: 0 auto;
+}
+
+.main-title{
+  font-size: 3rem;
+  line-height: 4.5rem;
+  font-weight: lighter;
+}
+
+ul{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+li{
+  position: relative;
+  padding: 0.375rem;
+  margin-bottom: 0.5rem;
+  background: white;
+  height: 3rem;
+  line-height:3rem;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+p{
+  font-size: 1rem;
+  margin: 0;
+  margin-left: 1.75rem;
+}
+
+li > button{
+  position: absolute;
+  right:-6rem;
+  top: 0;
+  height: 100%;
+  width: 6rem;
+  border: none;
+  background: rgb(227, 77, 77);
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: right 0.2s;
+}
+
+li > button:hover{
+  background: rgb(200, 36, 36);
+}
+
+p > input{
+  margin-right: 0.75rem;
+}
+
+.red{
+  border-left: 6px solid rgb(232, 113, 113);
+}
+
+.yellow{
+  border-left: 6px solid rgb(246, 231, 94);
+}
+
+.green{
+  border-left: 6px solid rgb(147, 232, 113);
+}
+
+.blue{
+  border-left: 6px solid rgb(113, 164, 232);
+}
+
+li > i{
+  position: absolute;
+  right:1.5rem;
+  top:1.5rem;
+  color: rgb(208, 208, 208);
+  margin-top: -0.75rem;
+  transition: right 0.2s;
+}
+
+.user-todo-text{
+  border-radius: 0;
+  font-size: 1rem;
+  border: 1px solid rgb(242, 242, 242);
+  padding:0;
+  padding-left: 0.25rem;
+  height: 100%;
+}
+
+.save-todo{
+  border: none;
+  background: rgb(75, 160, 249);
+  color: white;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  display: inline-block;
+  height: 100%;
+  cursor: pointer;
+}
+
+.inputs{
+  height:2.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.active > button{
+  right:0rem;
+}
+
+.active > i{
+  right:7rem;
+}
+
+li > input{
+  position: absolute;
+  left: 0.25rem;
+  top: 1.5rem;
+  margin-top: -2px;
+  line-height: 3rem;
+}

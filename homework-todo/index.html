@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Todo</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css">
+
+</head>
+<body>
+
+  <div class="container">
+    <h1 class="main-title">Todo app</h1>
+
+    <div class="inputs">
+      <input type="text" class="user-todo-text" placeholder="I have to ..." id="user-input"><button class="save-todo" id="user-button">Save todo</button>
+    </div>
+
+
+    <ul id="my-todos">
+
+    </ul>
+  </div>
+
+  <script>
+
+    var data = [
+      { content: 'Tidy your room', importance: 'blue', id: '31as231bba2'},
+      { content: 'Do homework', importance: 'red', id: '4444431bba2'},
+      { content: 'Commit', importance: 'yellow', id: '5544431bba2'},
+      { content: 'Push', importance: 'green', id: '4884431bba2'},
+      { content: 'Clone', importance: 'green', id: '4824431bba2'}
+    ];
+
+    var myTodos = document.getElementById('my-todos');
+
+    function renderTodo(item){
+      var li = document.createElement("li");
+      var p = document.createElement("p");
+      var c = document.createElement("input");
+      var i = document.createElement("i");
+      var b = document.createElement("button");
+
+      c.setAttribute('type', 'checkbox');
+
+      p.textContent = item.content;
+
+      li.className = item.importance;
+      li.appendChild(p);
+
+      i.className = 'fa fa-angle-left fa-2x';
+      li.appendChild(i);
+
+      b.textContent = 'Delete';
+      b.setAttribute("key", item.id);
+      b.addEventListener("click", deleteRow);
+
+      li.appendChild(b);
+
+      li.appendChild(c);
+
+      li.addEventListener("click", showDelete);
+      myTodos.appendChild(li);
+    }
+
+    function clearNodes(){
+      while (myTodos.firstChild) {
+          myTodos.removeChild(myTodos.firstChild);
+      }
+    }
+
+    function render(){
+      clearNodes();
+      data.forEach(renderTodo);
+    }
+
+    function deleteRow(event){
+      var id = event.target.getAttribute('key');
+      data = data.filter(function( obj ) {
+          return obj.id !== id;
+      });
+      render();
+    }
+
+    var lastElement = undefined;
+
+    function showDelete(event){
+      if(lastElement !== event.currentTarget && lastElement != undefined){
+        var c =lastElement.className;
+        lastElement.className = c.replace(/ active/i, '');
+      }
+      if(event.target.nodeName != 'BUTTON' && event.target.nodeName != 'INPUT'){
+        if(event.currentTarget.className.indexOf('active') === -1){
+          event.currentTarget.className += " " + 'active';
+          lastElement = event.currentTarget;
+        } else {
+          var c =event.currentTarget.className;
+          event.currentTarget.className = c.replace(/ active/i, '');
+        }
+      }
+
+    }
+
+    function addTodo(){
+      var userInput = document.getElementById('user-input');
+      var newTodo = {
+        content: userInput.value, importance: 'blue', id: Math.random().toString(36).substring(7).toString()
+      }
+      data.unshift(newTodo);
+      userInput.value = '';
+      render();
+    }
+
+    render();
+
+    var button = document.getElementById('user-button');
+    button.addEventListener('click', addTodo);
+
+  </script>
+</body>
+</html>
