@@ -31,20 +31,24 @@ h2 {
     line-height: 2rem;
 }
 #textInput {
-    width: 50%;
+    width: 89%;
     height: 2.5rem;
     padding: 0;
     margin-bottom: 1rem;
     border-radius: 10px;
     border-color: #dbefdc;
-    transition: 1s linear;
+    /*  transition: 1s linear; */
 }
+
+/*
 #textInput:focus {
     width: 90%;
 }
+*/
+
 #buttonInput {
-    width: 2.5rem;
-    height: 2.5rem;
+    width: 8%;
+    height: 2.7rem;
     padding: 0;
     border-radius: 10px;
     background-color: #4CAF50;
