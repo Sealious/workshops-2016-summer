@@ -8,11 +8,10 @@ var addItem = function() {
         return;
     }
 
-    var liText = document.createTextNode(input);
-
+    var liText = document.createTextNode(" "+input);
     var checkbox = document.createElement("input");
     checkbox.type = "checkbox";
-    checkbox.id = "task";
+    checkbox.id = "task"+ (c++);
     checkbox.class = "checkboxs"
 
     var label = document.createElement("label");
@@ -47,7 +46,7 @@ var doneCounter = function() {
     }
 }
 doneCounter();
-
+var c = 3;
 var addButton = document.querySelector("#buttonInput");
 addButton.addEventListener("click", function() {
     addItem();
