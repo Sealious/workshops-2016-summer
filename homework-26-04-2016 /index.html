@@ -9,6 +9,7 @@
 </head>
 
 <body>
+
     <header>
         <h1>ToDO app</h1>
         <p>
@@ -18,6 +19,9 @@
             proident, sunt in culpa qui officia deserunt mollit anim id est laborum cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum nim id est laborum.</p>
     </header>
     <section>
+        <script src="model.js"></script>
+        <script src="view.js"></script>
+        <script src="controller.js"></script>
         <h2 id="to-do-text">
             Come on, let's add something!
         </h2>
@@ -26,26 +30,17 @@
             <input type="submit" value="Add" id="buttonInput" />
         </p>
         <ul id="todo-list">
-            <li>
 
-                <input type="checkbox" id="task1">
-                <label for="task1">First task</label>
-
-            </li>
-            <li>
-                <input type="checkbox" id="task2">
-                <label for="task2">Second task</label>
-            </li>
         </ul>
         <p id="alignleft">
-            Total: <span id="counter">2</span>
+            Total: <span id="counter"></span>
         </p>
         <p id="alignright">
-            Done: <span id="boxCounter">0</span>
+            Done: <span id="boxCounter">1</span>
         </p>
     </section>
 
-    <script src="app.js"></script>
+    <script src="appMVC.js"></script>
 
 </body>
 
