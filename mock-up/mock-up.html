@@ -3,7 +3,17 @@
 
 <head>
     <title>To do</title>
+    <meta charset="UTF-8"> 
     <style type="text/css">
+    @keyframes fade-in
+    {
+        0%{
+            opacity: 0;
+        }
+        100%{
+            opacity: 1;
+        }
+    }
     html
     {
     	font-size: 1.5rem;
@@ -51,8 +61,9 @@
         color: #A5A4A4;
         margin: 1rem;
         font-weight: normal;
+        animation: fade-in 2s;
     }
-    li.one
+    li:nth-child(even)
     {
         background-color: #D2CBD4;
     }
@@ -75,6 +86,21 @@
         cursor: pointer;
         width: 100%;
     }
+    .button:hover
+    {
+    	background-color: #999493;
+
+;
+    }
+    #add
+    {
+    	position: relative;
+    	width: 30rem;
+    	height: 1.5rem;
+    	bottom: 0.4rem;
+    	left: 1.6rem;
+    	border: 2px solid grey;
+    }
     </style>
 </head>
 
@@ -82,18 +108,11 @@
 	<article>
 	<h1>To do list!</h1>
     <p id="quote">"Do. Or do not. There is no try."<br/> Master Yoda</p>
-	<ul>
-		<li class="one"><input type="checkbox">Feed Nyan Cat</input></li>
-		<li><input type="checkbox">Delete Windowz, then install Linux</input></li>
-		<li class="one"><input type="checkbox">Prepere to battle</input></li>
-		<li><input type="checkbox">Participate in the Battle</input></li>
-		<li class="one"><input type="checkbox">Revel!</input></li>
-		<li><input type="checkbox">Look for meaning of life</input></li>
-		<li class="one"><input type="checkbox">Prepare a meal</input></li>
-		<li><input type="checkbox">Take over the world</input></li>
-    </ul>
-    <button class="button" onclick="alert('Done!')">Submit</input>
+	<ul id="list"></ul>
+    <input id="add" placeholder="new task..." type="text"/>
+    <button class="button" onclick="addTask()">Add new task</input>
 	</article>
 </body>
+<script src="app.js"></script>
 </html>
 
