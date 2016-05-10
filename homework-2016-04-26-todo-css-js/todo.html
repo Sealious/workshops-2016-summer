@@ -1,30 +1,32 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>todo</title>
-        <meta charset="utf-8">
-        <link rel="stylesheet" type="text/css" href="style.css"/>
-        <script src="js/model.js"></script>
-        <script src="js/render.js"></script>
-        <script src="js/onload.js"></script>
-<!--        <link rel="stylesheet" href="http://basehold.it/27">-->
-    </head>
-    <body>
-        <section>
-            <h1 id="h">Aplikacja Todo</h1>
-            <p>Zarządzaj swoim czasem.</p>
-        </section>
-        <section>
-            <h2>Dodaj zadania do listy</h2>
-            <input type="text" placeholder="Nowe zadanie"/>
-            <button id="addButton">Dodaj</button>
-        </section>
-        <section>
-            <h2>Zaplanowane zadania</h2>
-            <ul id="list">
-            </ul>
-        </section>
-        <footer>Liczba zadań: <span id="counter">0</span> w tym zrobione: <span id="done-counter">0</span></footer>
+<head>
+    <title>todo</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+    <script src="js/model.js"></script>
+    <script src="js/render.js"></script>
+    <script src="js/onload.js"></script>
+    <!--        <link rel="stylesheet" href="http://basehold.it/27">-->
+</head>
+<body>
+<section>
+    <h1 id="h">Aplikacja Todo</h1>
+    <p>Zarządzaj swoim czasem.</p>
+</section>
+<section>
+    <h2>Dodaj zadania do listy</h2>
+    <form id="todo-form">
+        <input type="text" placeholder="Nowe zadanie"/>
+        <input type="submit" id="addButton" value="Dodaj"/>
+    </form>
+</section>
+<section>
+    <h2>Zaplanowane zadania</h2>
+    <ul id="list">
+    </ul>
+</section>
+<footer>Liczba zadań: <span id="counter">0</span> w tym zrobione: <span id="done-counter">0</span></footer>
 
-    </body>
+</body>
 </html>
