@@ -1,6 +1,10 @@
 document.addEventListener('DOMContentLoaded', function () {
     var addButton = document.querySelector("#addButton");
     addButton.addEventListener('click', function () {
+        var textInput = document.querySelector('input[type=text]');
+        if(textInput.value.length == 0) {
+            textInput.classList.add("emptyText");
+        }
         addItem();
     });
 
@@ -10,6 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
         if (key === 13) { // 13 is enter
             addItem();
         }
+        this.classList.remove("emptyText");
     });
     render();
 });

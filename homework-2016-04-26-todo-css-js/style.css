@@ -95,3 +95,7 @@ input[type=checkbox] {
     background-color: rgba(255, 252, 186, 1);
     transition: background-color 0.75s;
 }
+
+.emptyText {
+    outline: 1px solid red;
+}
