@@ -21,13 +21,15 @@ var tasks = [
   } */
 ];
 
-function addTask() {
+function addTask(event) {
+  event.preventDefault();
   var input = document.getElementById('todo-content');
   var content = input.value.trim();
   if(content){
     var task = {content: content, completed: false};
     tasks.push(task);
     showTask(task);
+    onTaskChecked();
   }
   input.value = '';
 }
@@ -43,7 +45,7 @@ function showTask(task) {
     checkbox.checked = 'checked';
   }
   checkbox.onclick = function() {
-    task.completed = !task.completed;
+    check(task, !task.completed);
     refreshCounter();
   }
   newTask.appendChild(checkbox);
@@ -112,7 +114,40 @@ function refreshCounter() {
   counter.textContent = 'Wykonano ' + countCompletedTasks() + '/' + tasks.length + ' zadań';
 }
 
+function checkAll(completed) {
+  tasks.forEach(function(task) {
+    check(task, completed);
+  });
+}
+
+function check(task, completed) {
+  task.completed = completed;
+  onTaskChecked();
+}
+
+function areAllTasksSelected() {
+  if(!tasks.filter(task => !task.completed).length && tasks.length) {
+    return true;
+  }
+  return false;
+}
+
+function onTaskChecked() {
+  var selectAll = document.getElementById('select-all');
+  var allSelected = areAllTasksSelected();
+  selectAll.value = (allSelected ? 'Odznacz' : 'Zaznacz') + ' wszystkie';
+  selectAll.onclick = function() {
+    checkAll(!allSelected);
+    clearList();
+    showTasks();
+  }
+}
+
 showTasks();
+onTaskChecked();
 
 document.getElementById('todo-form').onsubmit = addTask;
-document.getElementById('remove-completed').onclick = removeCompleted;
+document.getElementById('remove-completed').onclick = function() {
+  removeCompleted();
+  onTaskChecked();
+};
