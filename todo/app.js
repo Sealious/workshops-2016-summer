@@ -44,6 +44,7 @@ function showTask(task) {
   }
   checkbox.onclick = function() {
     task.completed = !task.completed;
+    refreshCounter();
   }
   newTask.appendChild(checkbox);
 
@@ -51,11 +52,9 @@ function showTask(task) {
   newTask.appendChild(taskLabel);
   list.appendChild(newTask);
   if(tasks.length) {
-    var message = document.getElementById('alert');
-    if(message && message.style.display !== 'none') {
-      message.style.display = 'none';
-    }
+    hideEmptyListMessage();
   }
+  refreshCounter();
 }
 
 function showTasks() {
@@ -66,7 +65,7 @@ function showTasks() {
   }
 }
 
-function showEmptyListMessage() {
+function showEmptyListMessage(show) {
   var message = document.getElementById('alert');
   if(!message) {
     message = document.createElement('h3');
@@ -76,10 +75,21 @@ function showEmptyListMessage() {
     document.querySelector('body').appendChild(message);
   }
   message.style.display = 'block';
+  var counter = document.getElementById('counter');
+  counter.style.display = 'none';
+}
+
+function hideEmptyListMessage() {
+  var message = document.getElementById('alert');
+  if(message && message.style.display !== 'none') {
+    message.style.display = 'none';
+  }
+  var counter = document.getElementById('counter');
+  counter.style.display = 'block';
 }
 
 function removeCompleted() {
-  if(tasks.length > 0) {
+  if(tasks.length) {
     tasks = tasks.filter(task => !task.completed);
     clearList();
     showTasks();
@@ -91,6 +101,15 @@ function clearList() {
   while (list.hasChildNodes()) {
       list.removeChild(list.lastChild);
   }
+}
+
+function countCompletedTasks() {
+  return tasks.filter(task => task.completed).length;
+}
+
+function refreshCounter() {
+  var counter = document.getElementById('counter');
+  counter.textContent = 'Wykonano ' + countCompletedTasks() + '/' + tasks.length + ' zadań';
 }
 
 showTasks();
