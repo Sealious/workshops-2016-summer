@@ -1,11 +1,3 @@
-var model = [
-    {name: "Zrozumieć vertical rhytm, line-height, margin-bottom, rem", done: false},
-    {name: "Pracować nad projektem", done: false},
-    {name: "Zrobić zakupy", done: false},
-    {name: "Posprzątać mieszkanie", done: false},
-    {name: "Zrobić pranie", done: true}
-];
-
 var render = function () {
     var list = document.querySelector("#list");
     while (list.firstChild) {
@@ -69,20 +61,12 @@ var refreshCounter = function () {
     var list = document.querySelector("#list");
     var counter = document.querySelector('#counter');
     counter.textContent = list.querySelectorAll('li').length;
-};
-
-document.addEventListener('DOMContentLoaded', function () {
-    var addButton = document.querySelector("#addButton");
-    addButton.addEventListener('click', function () {
-        addItem();
-    });
-
-    var textInput = document.querySelector('input[type=text]');
-    textInput.addEventListener('keypress', function (e) {
-        var key = e.which || e.keyCode;
-        if (key === 13) { // 13 is enter
-            addItem();
+    var doneCounter = document.querySelector('#done-counter');
+    var dones = 0;
+    for (var item of model) {
+        if (item.done) {
+            dones += 1;
         }
-    });
-    render();
-});
+    }
+    doneCounter.textContent = dones;
+};
