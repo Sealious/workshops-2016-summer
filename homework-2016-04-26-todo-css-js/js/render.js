@@ -63,8 +63,8 @@ var refreshCounter = function () {
     counter.textContent = list.querySelectorAll('li').length;
     var doneCounter = document.querySelector('#done-counter');
     var dones = 0;
-    for (var item of model) {
-        if (item.done) {
+    for (var i = 0; i < model.length; i++) {
+        if (model[i].done) {
             dones += 1;
         }
     }
