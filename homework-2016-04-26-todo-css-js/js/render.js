@@ -16,8 +16,10 @@ var render = function () {
         };
         theList.appendChild(checkbox);
 
-        var liText = document.createTextNode(model[i].name);
-        theList.appendChild(liText);
+        var label = document.createElement('label');
+        label.for  = i;
+        label.textContent = model[i].name;
+        theList.appendChild(label);
 
         var button = document.createElement('a');
         button.innerHTML = "&#x274c;";
