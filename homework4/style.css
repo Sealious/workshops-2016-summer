@@ -85,13 +85,15 @@ input[type="text"] {
     font-size: 1rem;
     box-shadow: none;
     border-radius: 0;
-    border:none;
+    border:2px solid transparent;
     padding: 15px;
 }
 
 input[type="text"]:focus {
   text-decoration: underline;
 }
+
+
 
 form button {
     margin-top: 1rem;

@@ -1,4 +1,4 @@
-var tasks =[];
+var tasks = [];
 
 
 function render_task(task_data){
@@ -6,7 +6,7 @@ function render_task(task_data){
   var list_element = document.createElement("li");
   var item_title = document.createElement("div");
   var item_date = document.createElement("span");
-  var item_checked= document.createElement("span");
+  var item_checked = document.createElement("span");
   var icon = document.createElement("i");
   item_title.className = "title";
   item_date.className = "date";
@@ -20,7 +20,7 @@ function render_task(task_data){
 
   checkbox.type="checkbox";
 
-  if(task_data.done){
+  if(task_data.done == true){
   	checkbox.checked = "checked";
   }
 
@@ -41,9 +41,13 @@ function render_task(task_data){
 
 function render(){
 	var list = document.getElementById("to-do-list");
-  while (list.hasChildNodes()) {
+
+
+  while (list.hasChildNodes())
+  {
       list.removeChild(list.lastChild);
   }
+
   tasks.forEach(render_task);
 }
 
@@ -56,12 +60,14 @@ function addTask(){
 
   if(title == "")
   {
-    alert("Nie można dodać pustego taska!");
+    document.getElementById('new-title').style.border = '2px solid #9B0C00'; 
     return ;
   }
-    
-	var done  = false;
-	tasks.push({title,date_now, done});
+  else
+     document.getElementById('new-title').style.border = '2px solid #ccc'; 
+
+  var done = true;
+	tasks.push({title,date_now,done});
   render();
   document.getElementById('new-title').value = "";
 }
@@ -75,3 +81,4 @@ function inputKeyUp(e) {
 }
 
 document.getElementById("create-new-task").onclick = addTask
+document.getElementById("create-new-task").onkeyup = inputKeyUp;
