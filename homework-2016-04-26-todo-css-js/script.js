@@ -11,31 +11,32 @@ var render = function () {
     while (list.firstChild) {
         list.removeChild(list.firstChild);
     }
-    for (var item of model) {
+
+    for (var i = 0; i < model.length; i++) {
         var theList = document.createElement('li');
 
         var checkbox = document.createElement('input');
         checkbox.type = "checkbox";
-        checkbox.name = item.name;
-        checkbox.checked = item.done;
+        checkbox.id = i;
+        checkbox.checked = model[i].done;
         checkbox.onclick = function () {
-            markDone(this.name, this.checked);
+            markDone(this.id, this.checked);
         };
         theList.appendChild(checkbox);
 
-        var liText = document.createTextNode(item.name);
+        var liText = document.createTextNode(model[i].name);
         theList.appendChild(liText);
 
         var button = document.createElement('a');
         button.innerHTML = "&#x274c;";
-        button.id = item.name;
+        button.id = i;
         button.onclick = function () {
             removeItem(this.id);
         };
         button.classList.add("remover");
         theList.appendChild(button);
 
-        if (item.done) {
+        if (model[i].done) {
             theList.classList.add("stroke")
         }
 
@@ -44,21 +45,14 @@ var render = function () {
     refreshCounter();
 };
 
-var markDone = function (name, checked) {
-    var i;
-    for (i = 0; i < model.length; i++) {
-        if (model[i].name === name) break;
-    }
-    model[i].done = checked;
+var markDone = function (id, checked) {
+    model[id].done = checked;
     render();
 };
 
-var removeItem = function (name) {
-    var i;
-    for (i = 0; i < model.length; i++) {
-        if (model[i].name === name) break;
-    }
-    model.splice(i, 1);
+var removeItem = function (id) {
+    console.log("id " + id);
+    model.splice(id, 1);
     render();
 };
 
