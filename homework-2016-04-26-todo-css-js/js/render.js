@@ -31,7 +31,7 @@ var render = function () {
         theList.appendChild(button);
 
         if (model[i].done) {
-            theList.classList.add("stroke")
+            theList.classList.add("stroke");
         }
 
         list.appendChild(theList);

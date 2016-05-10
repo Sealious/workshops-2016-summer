@@ -44,7 +44,7 @@ li {
     line-height: calc(1.7rem - 2px);
     padding-left: 0.5rem;
     transition: background-color 0.75s;
-    will-change: color;
+    will-change: color, background-color;
 }
 
 li:hover {
@@ -90,7 +90,7 @@ input[type=checkbox] {
     background-color: black;
 }
 
-.stroke {
+li.stroke {
     text-decoration: line-through;
     background-color: rgba(255, 252, 186, 1);
     transition: background-color 0.75s;

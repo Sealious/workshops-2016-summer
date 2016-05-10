@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
     var textInput = document.querySelector('input[type=text]');
-    textInput.addEventListener('keypress', function () {
+    textInput.focus();
+    textInput.addEventListener('keydown', function () {
         this.classList.remove("emptyText");
     });
 
