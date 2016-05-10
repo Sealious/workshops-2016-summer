@@ -25,7 +25,7 @@ ul {
     padding: 0;
 }
 li {
-   border-bottom: 1px dotted #67666f;
+    border-bottom: 1px dotted #67666f;
 }
 h2 {
     color: #333;
@@ -34,9 +34,9 @@ h2 {
     line-height: 2rem;
 }
 #textInput {
-    width: 89%;
+    width: 84%;
     height: 2.5rem;
-    padding: 0;
+    padding-left: 2rem;
     margin-bottom: 1rem;
     border-radius: 10px;
     border-color: #dbefdc;
@@ -50,7 +50,7 @@ h2 {
 */
 
 #buttonInput {
-    width: 8%;
+    width: 3rem;
     height: 2.7rem;
     padding: 0;
     border-radius: 10px;
@@ -74,4 +74,25 @@ input[type=checkbox]:checked + label {
 }
 #alignright {
     float: right;
+}
+.removeButtons {
+    float: right;
+    background-color: white;
+    border-radius: 50%;
+    height: 2rem;
+    width: 2rem;
+    border: 0;
+    filter: grayscale(100%);
+    transition: all 400ms;
+}
+.removeButtons:hover{
+  filter: grayscale(0%);
+}
+.removeButtons:after {
+    background-image: url("./images/x.png");
+    background-size: contain;
+    content: " ";
+    display: inline-block;
+    height: 1rem;
+    width: 1rem;
 }

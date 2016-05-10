@@ -1,7 +1,4 @@
-var c = 3;
 render();
-TaskCounter();
-DoneCounter();
 
 var addButton = document.querySelector("#buttonInput");
 addButton.addEventListener("click", function() {
@@ -10,8 +7,6 @@ addButton.addEventListener("click", function() {
         return;
     }
     AddTask();
-    TaskCounter();
-    DoneCounter();
     document.querySelector("#textInput").value = "";
 });
 
