@@ -45,7 +45,6 @@ var markDone = function (id, checked) {
 };
 
 var removeItem = function (id) {
-    console.log("id " + id);
     model.splice(id, 1);
     render();
 };
