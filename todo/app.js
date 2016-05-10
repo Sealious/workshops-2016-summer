@@ -23,10 +23,13 @@ var tasks = [
 
 function addTask() {
   var input = document.getElementById('todo-content');
-  var task = {content: input.value, completed: false};
+  var content = input.value.trim();
+  if(content){
+    var task = {content: content, completed: false};
+    tasks.push(task);
+    showTask(task);
+  }
   input.value = '';
-  tasks.push(task);
-  showTask(task);
 }
 
 function showTask(task) {
