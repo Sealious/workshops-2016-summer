@@ -48,9 +48,7 @@ function refresh_task(task_data, i) // odświeżaj stan danego zadania
 
 function deleteTask() // usuwanie zadania
 {
-	delete tasks[this.id];
-	// przefiltrowanie tablicy -> undefined
-	tasks = tasks.filter(function(n){ return n != undefined }); // jak działa filter w tablicy?
+	tasks.splice(this.id,1); // usuwanie zadania z tablicy
 	refresh();
 }
 
