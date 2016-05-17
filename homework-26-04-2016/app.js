@@ -12,7 +12,7 @@ function dateMonthYear() // funkcja ustawiająca dzisiejszą datę
 	var day = d.getDate(); 
 	var month = d.getMonth();
 	var year = d.getFullYear();
-	data_element.innerHTML = day+". "+monthNames[month]+" "+year+"r.";
+	data_element.innerHTML = day+" "+monthNames[month]+" "+year+"r.";
 }
 
 dateMonthYear();
