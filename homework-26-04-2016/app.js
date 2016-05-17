@@ -1,6 +1,8 @@
+//"   " - to też puste zadanie!!! - zobaczyć zapisaną zakładkę - RegExp (funkcjonalność będzie dodana później)
+
 document.getElementById("input-text").value=""; // wyczyść pole tekstowe
 
-var tasks = []; // tablica tasks do przechowywania zadań
+var tasks = [{title: "cos", done: true}]; // tablica tasks do przechowywania zadań
 
 function lackOfTask() // czy są na liście zadania?
 {
@@ -15,14 +17,23 @@ function lackOfTask() // czy są na liście zadania?
 	}
 }
 
-function refresh_task(task_data) // odświeżaj stan danego zadania
+function checkboxClick() // co się dzieje z checkboxem?
+{
+	tasks[this.id].done = this.checked;
+}
+
+
+function refresh_task(task_data, i) // odświeżaj stan danego zadania
 {
 	var list = document.getElementById("list"); // pobierz listę zadań
 	var list_element = document.createElement("li"); // dodaj nowe pole do listy zadań
 	var checkbox = document.createElement("input"); // dodaj input
+	checkbox.id = i; // ustaw id input checkbox
 	checkbox.type="checkbox"; // ustal typ inputa na checkbox
 	var text_task = document.createElement("span"); // utwórz pole tekstowe na treść zadania
+	text_task.id=checkbox.id; // stwórz id elementu span taki jak id input checkbox
 	text_task.textContent = task_data.title; // ustaw treść zadania
+	checkbox.onclick = checkboxClick;
 	if(task_data.done)
 	{
 		checkbox.checked = "checked";
@@ -40,7 +51,10 @@ function refresh() // odświeżaj stan strony
 	{
 		list.removeChild(list.lastChild);
 	}
-	tasks.forEach(refresh_task); // odśwież stan każdego zadania
+	for (var i = 0; i < tasks.length; i++) // odśwież stan każdego zadania
+	{
+		refresh_task(tasks[i], i);
+	}
 }
 
 refresh(); // odśwież stan strony po załadowaniu
