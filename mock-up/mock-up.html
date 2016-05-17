@@ -5,15 +5,6 @@
     <title>To do</title>
     <meta charset="UTF-8"> 
     <style type="text/css">
-    @keyframes fade-in
-    {
-        0%{
-            opacity: 0;
-        }
-        100%{
-            opacity: 1;
-        }
-    }
     html
     {
     	font-size: 1.5rem;
@@ -84,13 +75,11 @@
         padding: 1rem;
         text-align: center;
         cursor: pointer;
-        width: 100%;
+        width: 15.86rem;
     }
     .button:hover
     {
     	background-color: #999493;
-
-;
     }
     #add
     {
@@ -101,6 +90,10 @@
     	left: 1.6rem;
     	border: 2px solid grey;
     }
+    li
+    {
+        word-wrap: break-word;
+    }
     </style>
 </head>
 
@@ -110,9 +103,9 @@
     <p id="quote">"Do. Or do not. There is no try."<br/> Master Yoda</p>
 	<ul id="list"></ul>
     <input id="add" placeholder="new task..." type="text"/>
-    <button class="button" onclick="addTask()">Add new task</input>
+    <button class="button" id="new">Add new task</button>
+    <button class="button" id="del")>Delete checked tasks</button>
 	</article>
 </body>
 <script src="app.js"></script>
 </html>
-
