@@ -1,8 +1,6 @@
-//"   " - to też puste zadanie!!! - zobaczyć zapisaną zakładkę - RegExp (funkcjonalność będzie dodana później)
-
 document.getElementById("input-text").value=""; // wyczyść pole tekstowe
 
-var tasks = [{title: "cos", done: true}]; // tablica tasks do przechowywania zadań
+var tasks = [{title: "Posprzątać pokój", done: false},{title: "Odrobić lekcje", done:true}]; // tablica tasks do przechowywania zadań
 
 function lackOfTask() // czy są na liście zadania?
 {
@@ -28,12 +26,17 @@ function refresh_task(task_data, i) // odświeżaj stan danego zadania
 	var list = document.getElementById("list"); // pobierz listę zadań
 	var list_element = document.createElement("li"); // dodaj nowe pole do listy zadań
 	var checkbox = document.createElement("input"); // dodaj input
+	var button = document.createElement("button"); // tworzenie przycisku do usuwania
+	button.textContent="Usuń";
+	list_element.appendChild(button);
 	checkbox.id = i; // ustaw id input checkbox
 	checkbox.type="checkbox"; // ustal typ inputa na checkbox
+	button.id=i;
 	var text_task = document.createElement("span"); // utwórz pole tekstowe na treść zadania
 	text_task.id=checkbox.id; // stwórz id elementu span taki jak id input checkbox
 	text_task.textContent = task_data.title; // ustaw treść zadania
 	checkbox.onclick = checkboxClick;
+	button.onclick = deleteTask;
 	if(task_data.done)
 	{
 		checkbox.checked = "checked";
@@ -41,6 +44,14 @@ function refresh_task(task_data, i) // odświeżaj stan danego zadania
 	list_element.appendChild(checkbox); // do elementu "li" dołóż checkbox
 	list_element.appendChild(text_task); // po checkboxie w elemencie "li" wstaw zadanie
 	list.appendChild(list_element); // wstaw element "li" do listy
+}
+
+function deleteTask() // usuwanie zadania
+{
+	delete tasks[this.id];
+	// przefiltrowanie tablicy -> undefined
+	tasks = tasks.filter(function(n){ return n != undefined }); // jak działa filter w tablicy?
+	refresh();
 }
 
 function refresh() // odświeżaj stan strony
@@ -62,7 +73,8 @@ refresh(); // odśwież stan strony po załadowaniu
 function addTask() // dodaj zadanie
 {
 	var newtask=document.getElementById("input-text"); // pobierz wartość z pola tekstowego
-	if (newtask.value=="") // sprawdź, czy pole tekstowe jest puste
+	var text = newtask.value.trim(" "); // usuwanie spacji 
+	if (text.length==0) // sprawdź, czy pole tekstowe jest puste
 	{
 		alert("Nie można dodawać pustego zadania!"); // jeśli pole tekstowe jest puste, wyświetl ostrzeżenie
 	}

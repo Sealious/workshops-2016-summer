@@ -132,11 +132,17 @@ li {
 }
 
 button {
+	background-color: #0e83cd;
 	transition: 800ms;
 	border: 0.2rem solid #FFF;
 	color: #FFF;
 	font-weight: bold;
 	border-radius: 1rem;
+}
+
+button:hover, button:active {
+	background-color: #FFF;
+	color: #0e83cd;
 }
 
 #input-button:hover, #input-button:active {
