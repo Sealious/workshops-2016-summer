@@ -21,6 +21,22 @@ function checkboxClick() // co się dzieje z checkboxem?
 }
 
 
+function dateMonthYear() // funkcja ustawiająca dzisiejszą datę
+{
+	var monthNames = ["stycznia", "lutego", "marca", "kwietnia", "maja", "czerwca",
+	"lipca", "sierpnia", "września", "października", "listopada", "grudnia"];
+	
+	var data_element = document.getElementById("data-span");
+	var d = new Date();
+	var day = d.getDate(); 
+	var month = d.getMonth();
+	var year = d.getFullYear();
+	data_element.innerHTML = day+". "+monthNames[month]+" "+year+"r.";
+	refresh();
+}
+
+dateMonthYear();
+
 function refresh_task(task_data, i) // odświeżaj stan danego zadania
 {
 	var list = document.getElementById("list"); // pobierz listę zadań
