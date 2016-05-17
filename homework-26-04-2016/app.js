@@ -2,6 +2,21 @@ document.getElementById("input-text").value=""; // wyczyść pole tekstowe
 
 var tasks = [{title: "Posprzątać pokój", done: false},{title: "Odrobić lekcje", done:true}]; // tablica tasks do przechowywania zadań
 
+function dateMonthYear() // funkcja ustawiająca dzisiejszą datę
+{
+	var monthNames = ["stycznia", "lutego", "marca", "kwietnia", "maja", "czerwca",
+	"lipca", "sierpnia", "września", "października", "listopada", "grudnia"];
+	
+	var data_element = document.getElementById("data-span");
+	var d = new Date();
+	var day = d.getDate(); 
+	var month = d.getMonth();
+	var year = d.getFullYear();
+	data_element.innerHTML = day+". "+monthNames[month]+" "+year+"r.";
+}
+
+dateMonthYear();
+
 function lackOfTask() // czy są na liście zadania?
 {
 	var element=document.getElementById("info"); // pobierz z HTML element info
@@ -19,23 +34,6 @@ function checkboxClick() // co się dzieje z checkboxem?
 {
 	tasks[this.id].done = this.checked;
 }
-
-
-function dateMonthYear() // funkcja ustawiająca dzisiejszą datę
-{
-	var monthNames = ["stycznia", "lutego", "marca", "kwietnia", "maja", "czerwca",
-	"lipca", "sierpnia", "września", "października", "listopada", "grudnia"];
-	
-	var data_element = document.getElementById("data-span");
-	var d = new Date();
-	var day = d.getDate(); 
-	var month = d.getMonth();
-	var year = d.getFullYear();
-	data_element.innerHTML = day+". "+monthNames[month]+" "+year+"r.";
-	refresh();
-}
-
-dateMonthYear();
 
 function refresh_task(task_data, i) // odświeżaj stan danego zadania
 {
@@ -70,6 +68,7 @@ function deleteTask() // usuwanie zadania
 
 function refresh() // odświeżaj stan strony
 {
+	dateMonthYear();
 	lackOfTask(); // sprawdź czy są zadania na stronie
 	var list = document.getElementById("list"); // pobierz listę zadań
 	while (list.hasChildNodes()) 
