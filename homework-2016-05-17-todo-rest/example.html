@@ -2,51 +2,36 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <script src="js/jquery-1.12.3.min.js"></script>
     <script src="js/qwest.min.js"></script>
     <script type="text/javascript">
-        $(document).ready(function () {
-            //var url = "http://example.com";
-            var url = 'http://sealcode.org:8082/api/v1/resources/task';
-
-            /*$.get(url, function (data) {
-                $('.result').html(data);
-                alert("Load was performed.");
-            });*/
-
-            /*$.ajax({
-                type: "GET",
-                crossDomain: true,
-                url: url,
-                dataType: "jsonp",
-                success: function (data) {
-                    alert(data);
-                    console.log(data);
-                }
-            });*/
-
-            /*$.ajax({
-                type: "GET",
-                url: url
-            }).done(function (data) {
-                console.log(data);
-            });*/
-
-
-            /*var xhr = new XMLHttpRequest();
-            xhr.open("GET", url, true);
-            xhr.onload = function () {
-                console.log(xhr.responseText);
-            };
-            xhr.send();
-            */
-            qwest.get(url)
-                    .then(function (xhr, response) {
-                        console.log(response);
-                    });
-        });
+        var url = 'http://sealcode.org:8082/api/v1/resources/task';
+        qwest.get(url, {}, {cache: true})
+                .then(function (xhr, response) {
+                    console.log(response);
+                    document.write(JSON.stringify(response));
+                });
     </script>
 </head>
-<body>
-</body>
+
+<!--
+/*[{
+ "created_context": {
+    "timestamp": 1463691771216,
+    "ip": "5.172.236.109",
+    "user_id": null
+ },
+ "last_modified_context": {
+    "timestamp": 1463691771216,
+    "ip": "5.172.236.109",
+    "user_id": null
+ },
+ "id": "0fsau4x6wj",
+ "type_name": "task",
+ "body": {
+    "title": "ekhm",
+    "is_done": true
+ }
+ }]*/
+ -->
 </html>
+
