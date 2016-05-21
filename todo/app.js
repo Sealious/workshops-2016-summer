@@ -1,37 +1,64 @@
+var taskUrl = 'http://sealcode.org:8082/api/v1/resources/task';
+
+qwest.get(taskUrl, {}, {cache : true, dataType: 'json'})
+  .then(function(xhr, response) {
+    for(var i = 0; i < response.length; i++) {
+      var task = {
+        title: response[i].body.title,
+        is_done: response[i].body.is_done,
+        id: response[i].id
+      }
+      tasks.push(task);
+    }
+    showTasks();
+  });
+
 var tasks = [
 /*  {
-    content: 'Odrobić zadanie domowe',
-    completed: false
+    title: 'Odrobić zadanie domowe',
+    is_done: false
   },
   {
-    content: 'Napisać maila',
-    completed: false
+    title: 'Napisać maila',
+    is_done: false
   },
   {
-    content: 'Spakować się',
-    completed: false
+    title: 'Spakować się',
+    is_done: false
   },
   {
-    content: 'Kupić klapki',
-    completed: false
+    title: 'Kupić klapki',
+    is_done: false
   },
   {
-    content: 'Zjeść obiad',
-    completed: true
+    title: 'Zjeść obiad',
+    is_done: true
   } */
 ];
 
 function addTask(event) {
   event.preventDefault();
   var input = document.getElementById('todo-content');
-  var content = input.value.trim();
-  if(content){
-    var task = {content: content, completed: false};
-    tasks.push(task);
-    showTask(task);
-    onTaskChecked();
+  var title = input.value.trim();
+  if(title) {
+    var data = new FormData();
+    data.append('title', title);
+    data.append('is_done', false);
+
+    qwest.post(taskUrl, data, {cache : true, dataType: 'formdata'})
+      .then(function(xhr, response) {
+        var task = {
+          title: response.body.title,
+          is_done: response.body.is_done,
+          id: response.id
+        }
+        tasks.push(task);
+        showTask(task);
+        input.value = '';
+      }).catch(function(e, xhr, response) {
+        console.log(e);
+      });
   }
-  input.value = '';
 }
 
 function showTask(task) {
@@ -41,16 +68,16 @@ function showTask(task) {
 
   var checkbox = document.createElement('input');
   checkbox.type = 'checkbox';
-  if(task.completed) {
+  if(task.is_done) {
     checkbox.checked = 'checked';
   }
   checkbox.onclick = function() {
-    check(task, !task.completed);
+    check(task, !task.is_done);
     refreshCounter();
   }
   newTask.appendChild(checkbox);
 
-  taskLabel.textContent = task.content;
+  taskLabel.textContent = task.title;
   newTask.appendChild(taskLabel);
   list.appendChild(newTask);
   if(tasks.length) {
@@ -92,7 +119,7 @@ function hideEmptyListMessage() {
 
 function removeCompleted() {
   if(tasks.length) {
-    tasks = tasks.filter(task => !task.completed);
+    tasks = tasks.filter(task => !task.is_done);
     clearList();
     showTasks();
   }
@@ -106,7 +133,7 @@ function clearList() {
 }
 
 function countCompletedTasks() {
-  return tasks.filter(task => task.completed).length;
+  return tasks.filter(task => task.is_done).length;
 }
 
 function refreshCounter() {
@@ -114,19 +141,19 @@ function refreshCounter() {
   counter.textContent = 'Wykonano ' + countCompletedTasks() + '/' + tasks.length + ' zadań';
 }
 
-function checkAll(completed) {
+function checkAll(is_done) {
   tasks.forEach(function(task) {
-    check(task, completed);
+    check(task, is_done);
   });
 }
 
-function check(task, completed) {
-  task.completed = completed;
+function check(task, is_done) {
+  task.is_done = is_done;
   onTaskChecked();
 }
 
 function areAllTasksSelected() {
-  if(!tasks.filter(task => !task.completed).length && tasks.length) {
+  if(!tasks.filter(task => !task.is_done).length && tasks.length) {
     return true;
   }
   return false;
@@ -143,8 +170,8 @@ function onTaskChecked() {
   }
 }
 
-showTasks();
-onTaskChecked();
+// showTasks();
+// onTaskChecked();
 
 document.getElementById('todo-form').onsubmit = addTask;
 document.getElementById('remove-completed').onclick = function() {
