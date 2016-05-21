@@ -11,6 +11,7 @@ qwest.get(taskUrl, {}, {cache : true, dataType: 'json'})
       tasks.push(task);
     }
     showTasks();
+    onTaskChecked();
   });
 
 var tasks = [
@@ -68,6 +69,7 @@ function showTask(task) {
   var removeButton = document.createElement('span');
 
   var checkbox = document.createElement('input');
+  checkbox.id = task.id;
   checkbox.type = 'checkbox';
   if(task.is_done) {
     checkbox.checked = 'checked';
@@ -165,8 +167,16 @@ function checkAll(is_done) {
 }
 
 function check(task, is_done) {
-  task.is_done = is_done;
-  onTaskChecked();
+  var data = new FormData();
+  data.append('title', task.title);
+  data.append('is_done', is_done);
+  qwest.put(taskUrl + "/" + task.id, data, {cache: true})
+    .then(function(xhr, response) {
+      task.is_done = response.body.is_done;
+      document.getElementById(task.id).checked = task.is_done;
+      refreshCounter();
+      onTaskChecked();
+    });
 }
 
 function areAllTasksSelected() {
@@ -186,9 +196,6 @@ function onTaskChecked() {
     showTasks();
   }
 }
-
-// showTasks();
-// onTaskChecked();
 
 document.getElementById('todo-form').onsubmit = addTask;
 document.getElementById('remove-completed').onclick = function() {
