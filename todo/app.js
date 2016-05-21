@@ -65,6 +65,7 @@ function showTask(task) {
   var list = document.querySelector('ul');
   var newTask = document.createElement('li');
   var taskLabel = document.createElement('span');
+  var removeButton = document.createElement('span');
 
   var checkbox = document.createElement('input');
   checkbox.type = 'checkbox';
@@ -79,6 +80,16 @@ function showTask(task) {
 
   taskLabel.textContent = task.title;
   newTask.appendChild(taskLabel);
+  removeButton.className = 'remove-button';
+  removeButton.onclick = function () {
+    qwest.delete(taskUrl + "/" + task.id, {}, {cache: true})
+      .then(function(xhr, response) {
+        tasks = tasks.filter(todo => todo.id != task.id);
+        clearList();
+        showTasks();
+      })
+  }
+  newTask.appendChild(removeButton);
   list.appendChild(newTask);
   if(tasks.length) {
     hideEmptyListMessage();
@@ -119,9 +130,15 @@ function hideEmptyListMessage() {
 
 function removeCompleted() {
   if(tasks.length) {
-    tasks = tasks.filter(task => !task.is_done);
-    clearList();
-    showTasks();
+    var tasksToRemove = tasks.filter(task => task.is_done);
+    tasksToRemove.forEach(function (task) {
+      qwest.delete(taskUrl + "/" + task.id, {}, {cache: true})
+        .then(function(xhr, response) {
+          tasks = tasks.filter(todo => todo.id != task.id);
+          clearList();
+          showTasks();
+        });
+    });
   }
 }
 
