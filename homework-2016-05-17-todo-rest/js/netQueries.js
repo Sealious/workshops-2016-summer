@@ -57,10 +57,13 @@ var patchDoneAndRender = function (index, done) {
         });
 };
 
-/*var putAndRender = function (index, title, done) {
+var putAndRender = function (index, title, done) {
     var id = model[index].id;
     var newUrl = url + '/' + id;
-    qwest.put(newUrl, {title: title, is_done: done}, {cache: true})
+    /*var fd = new FormData();
+    fd.append('title', title);
+    fd.append('is_done', done);*/
+    qwest.put(newUrl, {title: title, is_done: false}, {cache: true})
         .then(function (xhr, response) {
             console.log(response);
             model[index] = response;
@@ -69,4 +72,4 @@ var patchDoneAndRender = function (index, done) {
         .catch(function (e, xhr, response) {
             alert("PUT Error:" + e);
         });
-};*/
+};

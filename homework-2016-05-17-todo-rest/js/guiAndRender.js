@@ -17,12 +17,18 @@ var render = function () {
 
         var label = document.createElement('label');
         label.for = i;
-        label.id = 'label' + i;
+        label.id = i;
+        label.contentEditable = true;
         label.textContent = model[i].body.title;
         theList.appendChild(label);
-/*        label.onclick = function () {
-            changeToEdit(this.id);
-        };*/
+        label.onclick = function () {
+            this._storeValueForLater = this.textContent;
+        };
+        label.onblur = function () {
+            if (this.contentEditable && this._storeValueForLater != this.textContent) {
+                putAndRender(this.id, this.textContent, model[this.id].body.is_done);
+            }
+        };
 
         var button = document.createElement('a');
         button.innerHTML = "&#x274c;";
@@ -62,36 +68,3 @@ var refreshCounter = function () {
     }
     doneCounter.textContent = dones;
 };
-
-
-
-/*
-var changeToEdit = function (id) {
-    var label = document.getElementById(id);
-    var val = label.textContent;
-    label.value = val;
-    label.innerHTML = "<input type='text'/>";
-    label.id = id;
-    label.onclick = null;
-    label.onkeydown = function (e) {
-        var key = e.which || e.keyCode;
-        if (key === 13) { // 13 is enter
-            var i = id.substring(id.length - 1);
-            /!*putAndRender(i, label.value, model[i].body.is_done);*!/
-            label = changeToLabel(id);
-        }
-    };
-};
-
-function changeToLabel(id) {
-    var label = document.getElementById(id);
-    label.innerHTML = "<input type='label'/>";
-    label.for = id.substring(id.length - 1);
-    label.id = id;
-    label.textContent = model[label.for].body.title;
-    label.onclick = function () {
-        label = changeToEdit(id);
-    };
-}
-*/
-//TODO click on label changes it to input[type=text]
