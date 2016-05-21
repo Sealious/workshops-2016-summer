@@ -1,6 +1,9 @@
 var taskUrl = 'http://sealcode.org:8082/api/v1/resources/task';
+qwest.setDefaultOptions({
+  cache: true
+});
 
-qwest.get(taskUrl, {}, {cache : true, dataType: 'json'})
+qwest.get(taskUrl, {}, {})
   .then(function(xhr, response) {
     for(var i = 0; i < response.length; i++) {
       var task = {
@@ -46,7 +49,7 @@ function addTask(event) {
     data.append('title', title);
     data.append('is_done', false);
 
-    qwest.post(taskUrl, data, {cache : true, dataType: 'formdata'})
+    qwest.post(taskUrl, data, { dataType: 'formdata' })
       .then(function(xhr, response) {
         var task = {
           title: response.body.title,
@@ -84,12 +87,7 @@ function showTask(task) {
   newTask.appendChild(taskLabel);
   removeButton.className = 'remove-button';
   removeButton.onclick = function () {
-    qwest.delete(taskUrl + "/" + task.id, {}, {cache: true})
-      .then(function(xhr, response) {
-        tasks = tasks.filter(todo => todo.id != task.id);
-        clearList();
-        showTasks();
-      })
+    removeTask(task);
   }
   newTask.appendChild(removeButton);
   list.appendChild(newTask);
@@ -133,15 +131,17 @@ function hideEmptyListMessage() {
 function removeCompleted() {
   if(tasks.length) {
     var tasksToRemove = tasks.filter(task => task.is_done);
-    tasksToRemove.forEach(function (task) {
-      qwest.delete(taskUrl + "/" + task.id, {}, {cache: true})
-        .then(function(xhr, response) {
-          tasks = tasks.filter(todo => todo.id != task.id);
-          clearList();
-          showTasks();
-        });
-    });
+    tasksToRemove.forEach(removeTask);
   }
+}
+
+function removeTask(task) {
+  qwest.delete(taskUrl + "/" + task.id, {}, {})
+    .then(function(xhr, response) {
+      tasks = tasks.filter(todo => todo.id != task.id);
+      clearList();
+      showTasks();
+    });
 }
 
 function clearList() {
