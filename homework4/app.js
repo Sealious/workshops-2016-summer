@@ -6,24 +6,27 @@ function render_task(task_data, index){
   var item_title = document.createElement("div");
   var item_date = document.createElement("span");
   var item_checked = document.createElement("span");
+  var item_checked_info = document.createElement("span");
   var icon = document.createElement("i");
+
 
   item_title.className = "title";
   item_date.className = "date";
   icon.className = "fa fa-clock-o";
   item_checked.className = "checked";
-
+  item_checked_info.className = "checked_info";
   item_title.textContent = task_data.title;
 
   var checkbox = document.createElement("input");
-  var checked_info = document.createTextNode("Done?");
+
+  item_checked_info.textContent = "Done?";
 
   checkbox.type="checkbox";
 
   if(task_data.done == true)
-    checkbox.checked = "checked";
+     checkbox.checked = "checked";
 
-  checkbox["data-task-id"] = index;
+  checkbox["data-task-id"] = index; 
   checkbox.onclick = checkbox_clicked;
 
   list_element.appendChild(item_title);
@@ -33,8 +36,9 @@ function render_task(task_data, index){
 
   item_date.innerHTML += " " + task_data.date_now;
 
-  item_checked.appendChild(checked_info);
+
   list_element.appendChild(item_checked);
+  item_checked.appendChild(item_checked_info);
    
   list.appendChild(list_element);
   list.insertBefore(list_element, list.firstChild)
@@ -58,7 +62,7 @@ render();
 
 function addTask(){
   var date_now = new Date().toJSON().slice(0,10);
-  var title =  document.getElementById('new-title').value;
+  var title = document.getElementById('new-title').value;
 
   if(title == "")
   {
@@ -77,9 +81,9 @@ function addTask(){
 
 function inputKeyUp(e) {
     e.which = e.which || e.keyCode;
-    if(e.which == 13) {
+    if(e.which == 13)
       addTask;
-    }
+
 }
 
 document.getElementById("create-new-task").onclick = addTask

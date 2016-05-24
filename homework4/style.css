@@ -1,3 +1,8 @@
+*{
+    box-sizing: border-box;
+}
+
+
 html {
     font-size: 1rem;
     font-family: sans-serif;
@@ -12,7 +17,7 @@ p {
 }
 h1,
 h2 {
-    line-height: 3rem;
+    line-height: 2rem;
     margin-top: 2rem;
     text-transform: uppercase;
     margin-bottom: 1rem;
@@ -26,6 +31,7 @@ h1 {
 }
 h2{
   margin-top:3rem;
+  font-size: 2rem;
 }
 span {
     font-size: 1rem;
@@ -48,6 +54,7 @@ li {
     padding-left: 1rem;
     padding-bottom: 1rem;
     line-height: 2rem;
+    font-size: 2rem;
     border-bottom: 1px solid #697179;
     transition: 0.5s background cubic-bezier(0.18, 0.76, 0.57, 1);
 }
@@ -60,7 +67,7 @@ li .title {
     color: #ECECEC;
     padding-bottom: 1rem;
     padding-top: 1rem;
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-family: 'Lato', sans-serif;
 }
 
@@ -82,18 +89,16 @@ input[type="text"] {
     display: block;
     margin: 0 auto;
     font-family: sans-serif;
-    font-size: 1rem;
     box-shadow: none;
     border-radius: 0;
     border:2px solid transparent;
-    padding: 15px;
+    height: 3rem;
+    padding: 0 1rem;
 }
 
 input[type="text"]:focus {
   text-decoration: underline;
 }
-
-
 
 form button {
     margin-top: 1rem;
@@ -117,4 +122,9 @@ form button:hover {
 form {
     width: 50%;
     margin: 0 auto;
+}
+
+input[type="checkbox"]:checked ~ span {
+    color: red!important;
+    font-weight: bold;
 }
