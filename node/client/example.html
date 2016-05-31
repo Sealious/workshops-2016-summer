@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <script src="./qwest.min.js"></script>
+    <script>
+
+        console.log("abc");
+        var url = 'http://localhost:3000/json';
+        qwest.get(url, {}, {cache: true})
+                .then(function (xhr, response) {
+                    console.log(response);
+                });
+    </script>
+</head>
+
+<!--
+/*[{
+ "created_context": {
+    "timestamp": 1463691771216,
+    "ip": "5.172.236.109",
+    "user_id": null
+ },
+ "last_modified_context": {
+    "timestamp": 1463691771216,
+    "ip": "5.172.236.109",
+    "user_id": null
+ },
+ "id": "0fsau4x6wj",
+ "type_name": "task",
+ "body": {
+    "title": "ekhm",
+    "is_done": true
+ }
+ }]*/
+ -->
+</html>
