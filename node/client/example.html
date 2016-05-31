@@ -11,6 +11,8 @@
                 .then(function (xhr, response) {
                     console.log(response);
                 });
+        url = 'http://localhost:3000/test';
+        qwest.post(url, {task: "a"}, {cache: true});
     </script>
 </head>
 
