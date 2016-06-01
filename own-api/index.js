@@ -44,6 +44,19 @@ app.post('/tasks', function(req, res) {
   res.json(task);
 });
 
+app.put('/tasks/:id', function(req, res) {
+  var task = tasks.filter(task => task.id == req.params.id)[0];
+  if(!task) {
+    res.sendStatus(404);
+  } else {
+    var taskIndex = tasks.indexOf(task);
+    task.title = req.body.title;
+    task.is_done = req.body.is_done;
+    tasks[taskIndex] = task;
+    res.json(task);
+  }
+});
+
 app.listen(4750, function () {
   console.log('Example app listening on port 4750!');
 });
