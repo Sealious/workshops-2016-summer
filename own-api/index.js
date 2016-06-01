@@ -5,15 +5,9 @@ var logger = require('morgan');
 
 var app = express();
 
-var lastId = 1;
+var lastId = 0;
 
-var tasks = [
-  {
-    id: 1,
-    is_done: false,
-    title: "Some title",
-  }
-];
+var tasks = [];
 
 app.use(cors());
 app.use(bodyParser.json());
@@ -28,11 +22,25 @@ app.get('/tasks', function(req, res) {
   res.json(tasks);
 });
 
-app.get('/task/:id', function(req,res) {
+app.get('/tasks/:id', function(req, res) {
   var task = tasks.filter(task => task.id == req.params.id)[0];
   if(!task) {
     res.sendStatus(404);
   }
+  res.json(task);
+});
+
+app.post('/tasks', function(req, res) {
+  console.log(req.body);
+  if(!req.body.title) {
+    res.status(400).json({ error: "title property is missing" });
+  }
+  var task = {
+    id: ++lastId,
+    is_done: req.body.is_done == undefined ? false : req.body.is_done,
+    title: req.body.title
+  }
+  tasks.push(task);
   res.json(task);
 });
 
