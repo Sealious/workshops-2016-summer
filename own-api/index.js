@@ -9,6 +9,10 @@ var lastId = 0;
 
 var tasks = [];
 
+function findTask(id) {
+  return tasks.filter(task => task.id == id)[0];
+}
+
 app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -23,7 +27,7 @@ app.get('/tasks', function(req, res) {
 });
 
 app.get('/tasks/:id', function(req, res) {
-  var task = tasks.filter(task => task.id == req.params.id)[0];
+  var task = findTask(req.params.id);
   if(!task) {
     res.sendStatus(404);
   }
@@ -45,7 +49,7 @@ app.post('/tasks', function(req, res) {
 });
 
 app.put('/tasks/:id', function(req, res) {
-  var task = tasks.filter(task => task.id == req.params.id)[0];
+  var task = findTask(req.params.id);
   if(!task) {
     res.sendStatus(404);
   } else if(!req.body.title || !req.body.is_done) {
@@ -63,6 +67,16 @@ app.put('/tasks/:id', function(req, res) {
     task.is_done = req.body.is_done;
     tasks[taskIndex] = task;
     res.json(task);
+  }
+});
+
+app.delete('/tasks/:id', function(req, res) {
+  var task = findTask(req.params.id);
+  if(!task) {
+    res.sendStatus(404);
+  } else {
+    tasks.splice(tasks.indexOf(task), 1);
+    res.sendStatus(204);
   }
 });
 
