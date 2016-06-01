@@ -48,6 +48,15 @@ app.put('/tasks/:id', function(req, res) {
   var task = tasks.filter(task => task.id == req.params.id)[0];
   if(!task) {
     res.sendStatus(404);
+  } else if(!req.body.title || !req.body.is_done) {
+    var error = {};
+    if(!req.body.title) {
+      error.title = "title property is missing";
+    }
+    if(!req.body.is_done) {
+      error.is_done = "is_done property is missing";
+    }
+    res.status(400).json({ error : error });
   } else {
     var taskIndex = tasks.indexOf(task);
     task.title = req.body.title;
