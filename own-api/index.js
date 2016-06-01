@@ -44,6 +44,9 @@ app.post('/tasks', function(req, res) {
     is_done: req.body.is_done == undefined ? false : req.body.is_done,
     title: req.body.title
   }
+  if(task.is_done === 'true' || task.is_done === 'false') {
+    task.is_done = JSON.parse(task.is_done);
+  }
   tasks.push(task);
   res.json(task);
 });
@@ -65,6 +68,9 @@ app.put('/tasks/:id', function(req, res) {
     var taskIndex = tasks.indexOf(task);
     task.title = req.body.title;
     task.is_done = req.body.is_done;
+    if(task.is_done === 'true' || task.is_done === 'false') {
+      task.is_done = JSON.parse(task.is_done);
+    }
     tasks[taskIndex] = task;
     res.json(task);
   }
