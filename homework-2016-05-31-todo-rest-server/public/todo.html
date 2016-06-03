@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>todo</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+    <script src="js/qwest.min.js"></script>
+    <script src="js/onLoadAndModel.js"></script>
+    <script src="js/guiAndRender.js"></script>
+    <script src="js/netQueries.js"></script>
+</head>
+<body>
+<section>
+    <h1 id="h">Todo</h1>
+    <p>Zarządzaj swoim czasem.</p>
+</section>
+<section>
+    <h2>Dodaj zadania do listy</h2>
+    <form id="todo-form">
+        <input type="text" placeholder="Nowe zadanie"/>
+        <input type="submit" id="addButton" value="Dodaj"/>
+    </form>
+</section>
+<div>
+    <ul id="list">
+    </ul>
+</div>
+<footer>
+    Liczba zadań: <span id="counter">0</span> w tym zrobione: <span id="done-counter">0</span>
+</footer>
+</body>
+</html>
