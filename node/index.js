@@ -6,6 +6,13 @@ var bodyParser = require('body-parser');
 var test = require('./app');
 test.asd('asd');
 
+var tasks = [
+    {title: "a", is_done: false},
+    {title: "a", is_done: false},
+    {title: "a", is_done: false}
+];
+
+
 app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded(
@@ -19,12 +26,15 @@ app.get('/', function (req, res) {
 
 app.get('/json', function (req, res) {
     console.log('GET /json');
-    res.send({test: "value"});
+    res.send(tasks);
 });
 
-app.post('/test', function (req, res) {
+app.post('/task', function (req, res) {
     console.log("POST /test");
-    console.log(req.body);
+    var task_nam = req.body.title;
+    var is_done = req.body.is_done;
+    tasks.push({task: task_nam, is_done: is_done})
+
 });
 
 app.listen(3000, function () {
