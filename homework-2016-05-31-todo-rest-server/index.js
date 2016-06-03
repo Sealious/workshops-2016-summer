@@ -3,6 +3,7 @@ var cors = require('cors');
 var bodyParser = require('body-parser');
 var path = require('path');
 var uuid = require('node-uuid');
+var fs = require('fs');
 
 var app = express();
 app.use(cors());
@@ -15,22 +16,23 @@ app.get('/', function (req, res) {
     res.sendFile(path.join(__dirname + '/public/todo.html'));
 });
 
-var model = [
-    {
-        id: uuid.v4(),
-        body: {
-            title: "Zadanie 1",
-            is_done: true
+
+var storagePath = "./persistence/data.json";
+var model;
+try {
+    model = require(storagePath);
+} catch (e) {
+    console.log('Nie udało się oworzyć pliku ' + e);
+    model = [
+        {
+            "id": uuid.v4(),
+            "body": {
+                "title": "Puste",
+                "is_done": false
+            }
         }
-    },
-    {
-        id: uuid.v4(),
-        body: {
-            title: "Inne zadanie",
-            is_done: false
-        }
-    }
-];
+    ];
+}
 
 var idiotParser = function (stringBool) {
     return stringBool === 'true';
@@ -100,6 +102,15 @@ app.put('/task/:id', function (req, res) {
     res.sendStatus(404);
 });
 
-app.listen(3000, function () {
+process.on('SIGINT', () => {
+    console.log('Zamykanie i zapisywanie...');
+    server.close();
+    fs.writeFile(storagePath, JSON.stringify(model, null, 2), "utf8", function (e) {
+        if (e) console.log('Nie udało się zapisać danych ' + e);
+        process.exit();
+    });
+});
+
+var server = app.listen(3000, function () {
     console.log('Uruchomiono serwer na localhost:3000[ctrl+c]');
 });
