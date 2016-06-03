@@ -2,6 +2,7 @@ var express = require('express');
 var cors = require('cors');
 var bodyParser = require('body-parser');
 var path = require('path');
+var uuid = require('node-uuid');
 
 var app = express();
 app.use(cors());
@@ -16,14 +17,14 @@ app.get('/', function (req, res) {
 
 var model = [
     {
-        id: "0",
+        id: uuid.v4(),
         body: {
             title: "Zadanie 1",
             is_done: true
         }
     },
     {
-        id: "1",
+        id: uuid.v4(),
         body: {
             title: "Inne zadanie",
             is_done: false
@@ -45,7 +46,7 @@ app.post('/task', function (req, res) {
     console.log("POST / " + JSON.stringify(req.body));
     //console.log("true? " + req.body.is_done + " : " + Boolean(req.body.is_done) + " : " + idiotParser(req.body.is_done));
     var addon = {
-        id: String(model.length),
+        id: uuid.v4(),
         body: {
             title: req.body.title,
             is_done: idiotParser(req.body.is_done)
