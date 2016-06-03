@@ -56,6 +56,34 @@ app.post('/task', function (req, res) {
     res.send(model[model.length - 1]);
 });
 
+app.patch('/task/:id', function (req, res) {
+    var id = req.params.id;
+    console.log("PATCH / " + id + " " + JSON.stringify(req.body));
+    for (var elem of model) {
+        if (elem.id === id) {
+            elem.body.is_done = idiotParser(req.body.is_done);
+            res.send(elem);
+            return;
+        }
+    }
+    console.log("Error no element " + id);
+});
+
+app.delete('/task/:id', function (req, res) {
+    var id = req.params.id;
+    console.log("DELETE / " + id + " " + JSON.stringify(req.body));
+    for (var i = 0; i < model.length; i++) {
+        if (model[i].id === id) {
+            model.splice(i, 1);
+            /*console.log(JSON.stringify(model, null, 2));*/
+            res.sendStatus(202);
+            return;
+        }
+    }
+    console.log("Error no element " + id);
+});
+
+
 app.listen(3000, function () {
     console.log('Uruchomiono serwer na localhost:3000[ctrl+c]');
 });

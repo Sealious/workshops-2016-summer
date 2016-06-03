@@ -11,9 +11,9 @@ var render = function () {
         checkbox.id = i;
         checkbox.checked = model[i].body.is_done;
 
-        /*checkbox.onclick = function () {
-         patchDoneAndRender(this.id, this.checked);
-         };*/
+        checkbox.onclick = function () {
+            patchDoneAndRender(this.id, this.checked);
+        };
         theList.appendChild(checkbox);
 
         var label = document.createElement('label');
@@ -34,9 +34,9 @@ var render = function () {
         var button = document.createElement('a');
         button.innerHTML = "&#x274c;";
         button.id = i;
-        /*button.onclick = function () {
-         deleteSpliceAndRender(this.id);
-         };*/
+        button.onclick = function () {
+            deleteSpliceAndRender(this.id);
+        };
         button.classList.add("remover");
         theList.appendChild(button);
 
