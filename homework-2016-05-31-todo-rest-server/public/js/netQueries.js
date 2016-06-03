@@ -55,7 +55,7 @@ var deleteSpliceAndRender = function (index) {
 var putAndRender = function (index, title, done) {
     var id = model[index].id;
     var newUrl = url + '/' + id;
-    qwest.put(newUrl, {title: title, is_done: false}, {cache: true})
+    qwest.put(newUrl, {title: title, is_done: done}, {cache: true})
         .then(function (xhr, response) {
             console.log(response);
             model[index] = response;

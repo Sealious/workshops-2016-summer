@@ -21,7 +21,7 @@ var render = function () {
         label.id = i;
         label.textContent = model[i].body.title;
         theList.appendChild(label);
-        /*label.contentEditable = true;
+        label.contentEditable = true;
         label.onclick = function () {
             this._storeValueForLater = this.textContent;
         };
@@ -29,7 +29,7 @@ var render = function () {
             if (this.contentEditable && this._storeValueForLater != this.textContent) {
                 putAndRender(this.id, this.textContent, model[this.id].body.is_done);
             }
-        };*/
+        };
 
         var button = document.createElement('a');
         button.innerHTML = "&#x274c;";
