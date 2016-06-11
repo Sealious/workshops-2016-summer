@@ -1,17 +1,12 @@
-document.getElementById("input-text").value=""; // wyczyść pole tekstowe
-
-var tasks = []; // tablica tasks do przechowywania zadań
-var howManyTasks=0;
-
-var url='http://sealcode.org:8082/api/v1/resources/task';
-
 function getTasks() 
 {
+	tasks.splice(0);
 	qwest.get(url,{},{cache: true})
-	.then((xhr,result) => result.forEach(function(element) {tasks.push(element.body);refresh();howManyTasks++;}));
+	.then((xhr,result) => result.forEach(function(element) {
+		tasks.push(element);
+		refresh();
+	}));
 }
-
-getTasks();
 
 function addTaskServer(task) 
 {
@@ -22,7 +17,6 @@ function dateMonthYear() // funkcja ustawiająca dzisiejszą datę
 {
 	var monthNames = ["stycznia", "lutego", "marca", "kwietnia", "maja", "czerwca",
 	"lipca", "sierpnia", "września", "października", "listopada", "grudnia"];
-	
 	var data_element = document.getElementById("data-span");
 	var d = new Date();
 	var day = d.getDate(); 
@@ -30,8 +24,6 @@ function dateMonthYear() // funkcja ustawiająca dzisiejszą datę
 	var year = d.getFullYear();
 	data_element.innerHTML = day+" "+monthNames[month]+" "+year+"r.";
 }
-
-dateMonthYear();
 
 function lackOfTask() // czy są na liście zadania?
 {
@@ -46,9 +38,14 @@ function lackOfTask() // czy są na liście zadania?
 	}
 }
 
-function checkboxClick() // co się dzieje z checkboxem?
+function checkboxClick(event) // co się dzieje z checkboxem?
 {
-	tasks[this.id].is_done = this.checked;
+	tasks[this.id].body.is_done = this.checked;
+	qwest.map('PATCH', url+'/'+tasks[this.id].id, tasks[this.id].body, {cache: true}).then(function(xhr, response)
+	{
+		getTasks();
+		refresh();
+	});
 }
 
 function refresh_task(task_data, i) // odświeżaj stan danego zadania
@@ -64,10 +61,10 @@ function refresh_task(task_data, i) // odświeżaj stan danego zadania
 	button.id=i;
 	var text_task = document.createElement("span"); // utwórz pole tekstowe na treść zadania
 	text_task.id=checkbox.id; // stwórz id elementu span taki jak id input checkbox
-	text_task.textContent = task_data.title; // ustaw treść zadania
+	text_task.textContent = task_data.body.title; // ustaw treść zadania
 	checkbox.onclick = checkboxClick;
 	button.onclick = deleteTask; // usuwanie zadania
-	if(task_data.is_done)
+	if(task_data.body.is_done)
 	{
 		checkbox.checked = "checked";
 	}
@@ -78,8 +75,11 @@ function refresh_task(task_data, i) // odświeżaj stan danego zadania
 
 function deleteTask() // usuwanie zadania
 {
-	tasks.splice(this.id,1); // usuwanie zadania z tablicy
-	refresh();
+	qwest.delete(url+'/'+tasks[this.id].id, null, {cache: true}).then(function(xhr, response)
+	{
+		getTasks();
+		refresh();
+	});
 }
 
 function refresh() // odświeżaj stan strony
@@ -108,7 +108,9 @@ function addTask() // dodaj zadanie
 	else // w przeciwnym wypadku, dodaj zadanie
 	{
 		var new_task={title: newtask.value, is_done: false};
-		tasks.push(new_task); // wstaw do tablicy tasks nowy obiekt z zadaniem
+		//tasks.push(new_task); // wstaw do tablicy tasks nowy obiekt z zadaniem
+		addTaskServer(new_task);
+		getTasks();
 		refresh(); // odświeżaj stan strony
 		newtask.value=""; // wyczyść pole tekstowe
 	}
@@ -123,22 +125,11 @@ function keyDown(event) // akcja dla naciśniętego klawisza
 	}
 }
 
+var tasks = []; // tablica tasks do przechowywania zadań
+var url='http://sealcode.org:8082/api/v1/resources/task';
 var button_save=document.getElementById("input-button-save");
-
 var el=document.getElementById("input-button").onclick = addTask; // dodaj zadanie, jeśli kliknięto przycisk
-
-// homework - dodawanie zadań na serwer i pobieranie z serwera i wyświetlanie!!!
-
-button_save.onclick=function() 
-{
-	//var oldTasks=tasks.slice(0,howManyTasks);
-	//do zrobienia jeszcze: edytowanie taska na serwerze
-	//do zrobienia jeszcze: usuwanie taska z serwera
-	var newTasks=tasks.slice(howManyTasks,tasks.length);
-	if (howManyTasks!=tasks.length) // czy dodano nowe zadanie?
-	{
-		newTasks.forEach(function(element) {addTaskServer(element)});
-	}
-}
-
+document.getElementById("input-text").value=""; // wyczyść pole tekstowe
+getTasks();
+dateMonthYear();
 document.onkeydown=keyDown; // dodaj zadanie, jeśli wciśnięto enter
